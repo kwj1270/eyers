@@ -3,13 +3,14 @@ package net.iwinv.eyers1.domain.user;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import net.iwinv.eyers1.domain.BaseTimeEntity;
 
 import javax.persistence.*;
 
 @Getter
 @NoArgsConstructor
 @Entity
-public class User{
+public class User extends BaseTimeEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -39,12 +40,9 @@ public class User{
         this.user_nickname = user_nickname;
     }
 
-    public User update(String user_id, String user_pw, String user_name, String user_nickname){
-        this.user_id = user_id;
+    public User update(String user_pw, String user_nickname){
         this.user_pw = user_pw;
-        this.user_name = user_name;
         this.user_nickname = user_nickname;
-
         return this;
     }
 
