@@ -13,9 +13,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class IndexController {
     private UserService userService;
 
-    @GetMapping("/hello")
+    @GetMapping("/")
     public String index(Model model, @LoginUser SessionUser user){
-        if(user.getUser_name() != null){
+        if(user.getUser_nickname() != null){
             model.addAttribute("user_nickname", user.getUser_nickname());
             return "main";
         } else {
@@ -23,7 +23,7 @@ public class IndexController {
         }
     }
 
-    @GetMapping("/")
+    @GetMapping("/hello")
     public String hello(){
         return "hello";
     }

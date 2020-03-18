@@ -7,7 +7,7 @@ import net.iwinv.eyers1.domain.user.User;
 
 @Getter
 @NoArgsConstructor
-public class UserSaveRequestDto {
+public class UserSaveRequestDto { // 저장할 때 필요한 정보를 모아놓은 Dto
 
     private String user_id;
     private String user_pw;

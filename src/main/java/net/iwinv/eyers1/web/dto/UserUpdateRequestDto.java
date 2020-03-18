@@ -7,7 +7,7 @@ import net.iwinv.eyers1.domain.user.User;
 
 @Getter
 @NoArgsConstructor
-public class UserUpdateRequestDto {
+public class UserUpdateRequestDto { // 업데이트시 필요한 정보를 모아놓은 Dto
 
     private String user_pw;
     private String user_nickname;
@@ -17,13 +17,5 @@ public class UserUpdateRequestDto {
         this.user_pw = user_pw;
         this.user_nickname = user_nickname;
     }
-
-    public User toEntity(){
-        return User.builder()
-                .user_pw(user_pw)
-                .user_nickname(user_nickname)
-                .build();
-    }
-
 
 }

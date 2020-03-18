@@ -1,10 +1,9 @@
 package net.iwinv.eyers1.web.dto;
 
+import net.iwinv.eyers1.domain.user.Role;
 import net.iwinv.eyers1.domain.user.User;
 
-import javax.persistence.Column;
-
-public class UserResponseDto {
+public class UserResponseDto { // 하나의 데이터 가져올 때 사용하는 Dto
 
     private Long user_seq;
     private String user_id;
@@ -12,6 +11,7 @@ public class UserResponseDto {
     private String user_name;
     private String user_studentnumber;
     private String user_nickname;
+    private Role user_role;
 
     public UserResponseDto(User entity){
         this.user_seq = entity.getUser_seq();
@@ -20,5 +20,6 @@ public class UserResponseDto {
         this.user_name = entity.getUser_name();
         this.user_studentnumber = entity.getUser_studentnumber();
         this.user_nickname = entity.getUser_nickname();
+        this.user_role = entity.getUser_role();
     }
 }
