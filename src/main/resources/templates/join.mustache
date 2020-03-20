@@ -1,0 +1,16 @@
+{{>layout/header}}
+<h1>회원가입</h1>
+<div class="container">
+    <div>
+        <form class="form-group" action="join" method="post">
+            <input type="text" name="user_id" placeholder="ID"><br>
+            <input type="password" name="user_pw" placeholder="PASSWORD"><br>
+            <input type="text" name="user_name" placeholder="이름"><br>
+            <input type="text" name="user_studentnumber" placeholder="학번"><br>
+            <input type="text" name="user_nickname" placeholder="별명"><br>
+            <input type="hidden" name="user_role" value="USER" readonly>
+            <input type="submit" value="회원가입">
+        </form>
+    </div>
+</div>
+{{>layout/footer}}

@@ -3,8 +3,10 @@ package net.iwinv.eyers1.web.dto;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Getter
+@Setter
 @NoArgsConstructor
 public class UserLoginRequestDto {
 
@@ -16,4 +18,5 @@ public class UserLoginRequestDto {
         this.user_id = user_id;
         this.user_pw = user_pw;
     }
+
 }

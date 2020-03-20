@@ -21,7 +21,7 @@ public class LoginController {
     private final HttpSession httpSession;
 
     @GetMapping("/login")
-    public String index(Model model, @LoginUser SessionUser user){
+    public String toLogin(Model model, @LoginUser SessionUser user){
         if(user != null){
             model.addAttribute("user_nickname", user.getUser_nickname());
             return "redirect:main2";
@@ -31,10 +31,15 @@ public class LoginController {
     }
 
     @PostMapping("/login")
-    public String login(@Param("user_id")String user_id, @Param("user_pw")String user_pw){
-        UserLoginRequestDto requestDto = UserLoginRequestDto.builder().user_id(user_id).user_pw(user_pw).build();
+    public String login(UserLoginRequestDto requestDto){
         SessionUser user = new SessionUser(userService.login(requestDto));
         httpSession.setAttribute("user", user);
         return "redirect:main2";
+    }
+
+    @GetMapping("/logout")
+    public String logout(@LoginUser SessionUser user){
+        httpSession.removeAttribute("user");
+        return "redirect:login";
     }
 }

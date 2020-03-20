@@ -19,6 +19,11 @@ public class UserService {
     @Transactional  // 저장하고 seq 값 반환
     public Long save(UserSaveRequestDto requestDto){return userRepository.save(requestDto.toEntity()).getUser_seq();}
 
+    @Transactional  // 저장하고 seq 값 반환
+    public User join(UserSaveRequestDto requestDto){
+        return userRepository.save(requestDto.toEntity());
+    }
+
     @Transactional  // 업데이트 하고 seq 값 반
     public Long update(Long user_seq, UserUpdateRequestDto requestDto){ // 바꿀 대상이랑 매개변수 받기 (spring 컨테이너를 통한 객체 자동 생성 및 주입)
         User user = userRepository.findById(user_seq).orElseThrow(() -> // 람다식 사용 있으면 반환 없으면 던져라 (매개변수로 들어간 익명 객체)

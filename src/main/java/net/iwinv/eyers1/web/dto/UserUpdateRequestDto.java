@@ -3,7 +3,6 @@ package net.iwinv.eyers1.web.dto;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import net.iwinv.eyers1.domain.user.User;
 
 @Getter
 @NoArgsConstructor
