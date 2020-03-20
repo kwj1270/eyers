@@ -56,11 +56,27 @@ public class IndexControllerTest {
     }
 
     @Test
+    public void 로그인페이지_로딩()throws Exception{
+        httpSession.removeAttribute("user");
+
+        String login = "login world";
+        mvc.perform(get("/")
+                .session(httpSession)
+                .contentType(MediaType.APPLICATION_JSON_UTF8))
+                .andExpect(status().isOk())
+                .andExpect(content().string(login));
+    }
+
+    @Test
     public void 메인페이지_로딩()throws Exception{
         String main = "main world!";
         mvc.perform(get("/")
-                .session(httpSession).contentType(MediaType.APPLICATION_JSON_UTF8))
+                .session(httpSession)
+                .contentType(MediaType.APPLICATION_JSON_UTF8))
                 .andExpect(status().isOk())
                 .andExpect(content().string(main));
     }
+        // 인덱스 컨트롤에서 main2로 일단 설정해둠
+        // main 변경시 main 내용들도 테스트 할 수 있도록
+
 }

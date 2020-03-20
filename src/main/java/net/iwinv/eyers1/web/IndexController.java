@@ -15,11 +15,21 @@ public class IndexController {
 
     @GetMapping("/")
     public String index(Model model, @LoginUser SessionUser user){
-        if(user.getUser_nickname() != null){
+        if(user != null){
             model.addAttribute("user_nickname", user.getUser_nickname());
-            return "main";
+            return "redirect:main2";
         } else {
-            return "hello";
+            return "redirect:login";
+        }
+    }
+
+    @GetMapping("/main2")
+    public String main(Model model, @LoginUser SessionUser user){
+        if(user != null){
+            model.addAttribute("user_nickname", user.getUser_nickname());
+            return "main2";
+        } else {
+            return "redirect:login";
         }
     }
 

@@ -14,11 +14,8 @@ public class SessionUser implements Serializable {
     private Role user_role;
 
     public SessionUser(User user) {
-        if (user == null) {
-        } else {
             this.user_name = user.getUser_name();
             this.user_nickname = user.getUser_nickname();
             this.user_role = user.getUser_role();
-        }
     }
 }

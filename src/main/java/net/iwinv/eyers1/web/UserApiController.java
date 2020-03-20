@@ -15,7 +15,6 @@ public class UserApiController {
     @PostMapping("/api/v1/user")
     public Long save(@RequestBody UserSaveRequestDto requestDto){return userService.save(requestDto);}
 
-
     @PutMapping("/api/v1/user/{user_seq}")
     public Long update(@PathVariable Long user_seq, @RequestBody UserUpdateRequestDto requestDto){
         return userService.update(user_seq,requestDto);
@@ -25,7 +24,6 @@ public class UserApiController {
     public UserResponseDto findById (@PathVariable Long user_seq) {
         return userService.findById(user_seq);
     }
-
 
     @DeleteMapping("/api/v1/user/{user_seq}")
     public Long delete(@PathVariable Long user_seq){

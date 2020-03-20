@@ -33,6 +33,4 @@ public class UserSaveRequestDto { // 저장할 때 필요한 정보를 모아놓
                 .user_nickname(user_nickname)
                 .build();
     }
-
-
 }

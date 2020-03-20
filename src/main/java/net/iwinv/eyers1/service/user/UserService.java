@@ -3,6 +3,7 @@ package net.iwinv.eyers1.service.user;
 import lombok.RequiredArgsConstructor;
 import net.iwinv.eyers1.domain.user.User;
 import net.iwinv.eyers1.domain.user.UserRepository;
+import net.iwinv.eyers1.web.dto.UserLoginRequestDto;
 import net.iwinv.eyers1.web.dto.UserResponseDto;
 import net.iwinv.eyers1.web.dto.UserSaveRequestDto;
 import net.iwinv.eyers1.web.dto.UserUpdateRequestDto;
@@ -13,7 +14,7 @@ import org.springframework.transaction.annotation.Transactional;
 @Service
 public class UserService {
 
-    private UserRepository userRepository;
+    private final UserRepository userRepository;
 
     @Transactional  // 저장하고 seq 값 반환
     public Long save(UserSaveRequestDto requestDto){return userRepository.save(requestDto.toEntity()).getUser_seq();}
@@ -39,4 +40,9 @@ public class UserService {
                 IllegalArgumentException("해당 게시글이 없습니다. id="+ user_seq));
         userRepository.delete(user);
     }
+    @Transactional  // 저장하고 seq 값 반환
+    public User login(UserLoginRequestDto requestDto){
+        return userRepository.login(requestDto.getUser_id(),requestDto.getUser_pw());
+    }
+
 }
