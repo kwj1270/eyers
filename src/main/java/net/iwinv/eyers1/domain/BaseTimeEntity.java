@@ -9,10 +9,11 @@ import javax.persistence.EntityListeners;
 import javax.persistence.MappedSuperclass;
 import java.time.LocalDateTime;
 
+
 @Getter
 @MappedSuperclass
 @EntityListeners(AuditingEntityListener.class)
-public abstract class BaseTimeEntity {
+public abstract class BaseTimeEntity { // 수정 생성 날짜 필요하면 넣을려고 준비해둔 코드
 
     @CreatedDate
     private LocalDateTime createdDate;

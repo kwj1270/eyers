@@ -65,7 +65,13 @@
 
         $(thisAlert).removeClass('alert-validate');
     }
-    
+    /*==================================================================
+    [ Go Join Page ]*/
+
+    function goJoin(){
+        window.location.href="join";
+    }
+
     /*==================================================================
     [ Show pass ]*/
     var showPass = 0;
@@ -80,8 +86,9 @@
             $(this).removeClass('active');
             showPass = 0;
         }
-        
-    });
 
+
+
+    });
 
 })(jQuery);

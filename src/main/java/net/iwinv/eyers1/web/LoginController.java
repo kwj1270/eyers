@@ -5,7 +5,6 @@ import net.iwinv.eyers1.config.LoginUser;
 import net.iwinv.eyers1.config.dto.SessionUser;
 import net.iwinv.eyers1.service.user.UserService;
 import net.iwinv.eyers1.web.dto.UserLoginRequestDto;
-import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;

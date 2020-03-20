@@ -8,3 +8,5 @@ import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 public class JpaConfig {
 }
 
+// JPA의 자동 CRUD를 지원하기 위한 클래스
+

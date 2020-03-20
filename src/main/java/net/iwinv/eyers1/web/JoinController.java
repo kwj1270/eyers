@@ -6,8 +6,6 @@ import net.iwinv.eyers1.config.dto.SessionUser;
 import net.iwinv.eyers1.domain.user.Role;
 import net.iwinv.eyers1.service.user.UserService;
 import net.iwinv.eyers1.web.dto.UserSaveRequestDto;
-import org.hibernate.annotations.Parameter;
-import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
