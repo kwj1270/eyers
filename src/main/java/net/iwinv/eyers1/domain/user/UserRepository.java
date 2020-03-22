@@ -17,4 +17,16 @@ public interface UserRepository extends JpaRepository<User,Long> { // 별거 없
     // @Query("SELECT u FROM User u WHERE u.user_id = kwj1270 AND u.user_pw = :user_pw")
     // 이렇게 되는 것이다.
 
+
+    @Query("SELECT u FROM User u WHERE u.user_id = :user_id")
+    User idCheck(@Param("user_id") String user_id);
+
+    @Query("SELECT u FROM User u WHERE u.user_studentnumber = :user_studentnumber")
+    User studentnumberCheck(@Param("user_studentnumber") String user_studentnumber);
+
+    @Query("SELECT u FROM User u WHERE u.user_nickname = :user_nickname")
+    User nicknameCheck(@Param("user_nickname") String user_nickname);
+
+
+
 }

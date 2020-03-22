@@ -6,19 +6,22 @@
     <div class="card-body">
         <div class="form-group">
             <form class="form-group" action="join" method="post">
-                <input type="text" name="user_id" class="form-control" maxlength="20" placeholder="ID" required><br>
-                <input type="password" name="user_pw" class="form-control" maxlength="8" placeholder="PASSWORD" required><br>
+                <input type="text" name="user_id" class="form-control" id="user_id" maxlength="20" placeholder="ID" required><br>
+                <span id="id_check" for="user_id"></span>
+                <input type="password" name="user_pw" class="form-control" minlength="4" maxlength="8" placeholder="PASSWORD" required><br>
                 <input type="text" name="user_name" class="form-control" maxlength="20" placeholder="이름" required><br>
-                <input type="text" name="user_studentnumber" class="form-control" maxlength="20" placeholder="학번" required><br>
-                <input type="text" name="user_nickname" class="form-control" maxlength="20" placeholder="별명" required><br>
+                <input type="text" name="user_studentnumber" class="form-control" id="user_studentnumber" maxlength="20" placeholder="학번" onkeypress="inNumber();" required><br>
+                <span id="studentnumber_check" for="user_studentnumber"></span>
+                <input type="text" name="user_nickname" class="form-control" id="user_nickname" maxlength="20" placeholder="별명" required><br>
+                <span id="nickname_check" for="user_nickname"></span>
                 <input type="hidden" name="user_role" value="USER" readonly>
-                <button type="submit" class="btn btn-lg btn-primary btn-block" >Join</button>
+                <button type="submit" class="btn btn-lg btn-primary btn-block" id="btn_join" >Join</button>
                 <button type="button" class="btn btn-lg btn-primary btn-block" onclick="location.href='login'">Login</button>
             </form>
         </div>
     </div>
 </div>
-<script>
-    document.body.style.backgroundImage = "url('join/images/bg-02.jpg')";
-</script>
 {{>layout/footer}}
+<script>document.body.style.backgroundImage = "url('join/images/bg-02.jpg')";</script>
+<script src="join/js/join.js"></script>
+{{>layout/end}}

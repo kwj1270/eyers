@@ -24,6 +24,36 @@ public class UserService {
         return userRepository.save(requestDto.toEntity());
     }
 
+    @Transactional
+    public boolean idCheck(String user_id){
+        User user = userRepository.idCheck(user_id);
+        boolean useOk = false;
+        if(user == null){
+            useOk = true;
+        }
+        return useOk;
+    }
+
+    @Transactional
+    public boolean studentnumberCheck(String user_studentnumber){
+        User user = userRepository.studentnumberCheck(user_studentnumber);
+        boolean useOk = false;
+        if(user == null){
+            useOk = true;
+        }
+        return useOk;
+    }
+
+    @Transactional
+    public boolean nicknameCheck(String user_nickname){
+        User user = userRepository.nicknameCheck(user_nickname);
+        boolean useOk = false;
+        if(user == null){
+            useOk = true;
+        }
+        return useOk;
+    }
+
     @Transactional  // 업데이트 하고 seq 값 반
     public Long update(Long user_seq, UserUpdateRequestDto requestDto){ // 바꿀 대상이랑 매개변수 받기 (spring 컨테이너를 통한 객체 자동 생성 및 주입)
         User user = userRepository.findById(user_seq).orElseThrow(() -> // 람다식 사용 있으면 반환 없으면 던져라 (매개변수로 들어간 익명 객체)
