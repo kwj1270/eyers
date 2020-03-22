@@ -72,20 +72,22 @@ var user_nickname = $('#user_nickname').val();
 			});
 		});
 
-$('#btn_join').submit(function(){
+function submitCheck(){
     var id_color = $('#id_check').css('color');
-    var studentnumber_color = $('#studnetnumber_check').css('color');
+    var studentnumber_color = $('#studentnumber_check').css('color');
     var nickname_color = $('#nickname_check').css('color');
 
-    console.log(id_color)
-    console.log(studentnumber_color)
-    console.log(nickname_color)
+    alert(id_color)
 
-    if(id_color == "red" || studentnumber_color == "red" || nickname_color == "red"){
-        alert("입력이 올바르지 않습니")
-        return false;
+    if(id_color == "rgb(0, 128, 0)" && studentnumber_color == "rgb(0, 128, 0)" && nickname_color == "rgb(0, 128, 0)"){
+        return true;
+    } else if(id_color == "rgb(0, 128, 1)" && studentnumber_color == "rgb(0, 128, 1)" && nickname_color == "rgb(0, 128, 1)"){
+        alert("아이디, 학번, 별명의 값을 변경해주십시오")
+    } else {
+        alert("입력이 올바르지 않습니다")
     }
-})
+        return false;
+}
 
 function inNumber(){
   if(event.keyCode<48 || event.keyCode>57){

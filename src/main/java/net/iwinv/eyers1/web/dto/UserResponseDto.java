@@ -3,7 +3,8 @@ package net.iwinv.eyers1.web.dto;
 import net.iwinv.eyers1.domain.user.Role;
 import net.iwinv.eyers1.domain.user.User;
 
-public class UserResponseDto { // 하나의 데이터 가져올 때 사용하는 Dto
+// 데이터베이스로부터 하나의 데이터를 가져올 때 사용하는 클래스
+public class UserResponseDto {
 
     private Long user_seq;
     private String user_id;

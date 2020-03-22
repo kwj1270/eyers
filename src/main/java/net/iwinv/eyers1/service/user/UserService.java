@@ -19,12 +19,12 @@ public class UserService {
     @Transactional  // 저장하고 seq 값 반환
     public Long save(UserSaveRequestDto requestDto){return userRepository.save(requestDto.toEntity()).getUser_seq();}
 
-    @Transactional  // 저장하고 seq 값 반환
+    @Transactional  // User 반환
     public User join(UserSaveRequestDto requestDto){
         return userRepository.save(requestDto.toEntity());
     }
 
-    @Transactional
+    @Transactional // id 중복 체크
     public boolean idCheck(String user_id){
         User user = userRepository.idCheck(user_id);
         boolean useOk = false;
@@ -34,7 +34,7 @@ public class UserService {
         return useOk;
     }
 
-    @Transactional
+    @Transactional  // 학번 중복 체크
     public boolean studentnumberCheck(String user_studentnumber){
         User user = userRepository.studentnumberCheck(user_studentnumber);
         boolean useOk = false;
@@ -44,7 +44,7 @@ public class UserService {
         return useOk;
     }
 
-    @Transactional
+    @Transactional  // 별명 중복 체크
     public boolean nicknameCheck(String user_nickname){
         User user = userRepository.nicknameCheck(user_nickname);
         boolean useOk = false;
@@ -69,13 +69,13 @@ public class UserService {
         return new UserResponseDto(entity);
     }
 
-    @Transactional
+    @Transactional // 유저 정보 삭제
     public void delete (Long user_seq){
         User user = userRepository.findById(user_seq).orElseThrow(()->new
                 IllegalArgumentException("해당 게시글이 없습니다. id="+ user_seq));
         userRepository.delete(user);
     }
-    @Transactional  // 저장하고 seq 값 반환
+    @Transactional  // 아이디 패스워드 일치하면 유저정보 가져오기
     public User login(UserLoginRequestDto requestDto){
         return userRepository.login(requestDto.getUser_id(),requestDto.getUser_pw());
     }
