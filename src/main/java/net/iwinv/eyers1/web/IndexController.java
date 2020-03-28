@@ -51,4 +51,10 @@ public class IndexController {
     public String hello(){
         return "hello";
     }
+
+    @GetMapping("/find")
+    public String find(){
+        return "find";
+    }
+
 }

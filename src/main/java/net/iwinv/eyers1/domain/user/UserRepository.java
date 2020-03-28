@@ -4,11 +4,11 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
-                                                    // <CRUD메소드를 만들 대상(테이블), PK 자료형>
-public interface UserRepository extends JpaRepository<User,Long> { // 별거 없어보이지만 DAO의 CRUD메소드를 자동 새성함 (우리눈에 안보임)
-/*
-    // DAO의 CRUD 기능을 알아서 만들어 준다.
-*/
+// <CRUD메소드를 만들 대상(테이블), PK 자료형>
+public interface UserRepository extends JpaRepository<User, Long> { // 별거 없어보이지만 DAO의 CRUD메소드를 자동 새성함 (우리눈에 안보임)
+    /*
+        // DAO의 CRUD 기능을 알아서 만들어 준다.
+    */
     // CRUD 외의 쿼리를 만들고 싶을때 사용
     @Query("SELECT u FROM User u WHERE u.user_id = :user_id AND u.user_pw = :user_pw")
     User login(@Param("user_id") String user_id, @Param("user_pw") String user_pw);
@@ -27,6 +27,10 @@ public interface UserRepository extends JpaRepository<User,Long> { // 별거 없
     @Query("SELECT u FROM User u WHERE u.user_nickname = :user_nickname")
     User nicknameCheck(@Param("user_nickname") String user_nickname);
 
+    @Query("SELECT user_id FROM User u WHERE u.user_name = :user_name AND u.user_studentnumber = :user_studentnumber")
+    String findId(@Param("user_name") String user_name, @Param("user_studentnumber") String user_studentnumber);
 
+    @Query("SELECT user_pw FROM User u WHERE u.user_id = :user_id AND u.user_name = :user_name AND u.user_studentnumber = :user_studentnumber")
+    String findPassword(@Param("user_id")String user_id, @Param("user_name") String user_name, @Param("user_studentnumber") String user_studentnumber);
 
 }

@@ -22,12 +22,10 @@ public class JoinApiController {
         return userService.idCheck(user_id);
     }
 
-
     @GetMapping("/api/v1/join/studentnumber/check") // 학번 중복 체크
     public boolean studentnumberCheck(@RequestParam("user_studentnumber") String user_studentnumber) {
         return userService.studentnumberCheck(user_studentnumber);
     }
-
 
     @GetMapping("/api/v1/join/nickname/check") // 별명 중복 체크
     public boolean nicknameCheck(@RequestParam("user_nickname") String user_nickname) {
