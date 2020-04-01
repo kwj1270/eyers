@@ -45,5 +45,4 @@ public class JoinController {
         httpSession.setAttribute("user", user); // 받아온 user 정보를 session 에 저장
         return "redirect:main2";
     }
-
 }
