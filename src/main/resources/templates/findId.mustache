@@ -5,23 +5,20 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta >
+    <meta>
     <style>
         .ft-color-blue {
             font-color:blue;
         }
+
+
     </style>
     <title>아이디 변경</title>
 </head>
 <body>
-{{#user_id}}
-    <div class="container">
-        <b>결과</b>: <span class="ft-color-blue">{{user_id}}</span> 입니다.
-    </div>
-{{/user_id}}
-{{^user_id}}
-    <div class="container">
-        <form action="/api/v1/user/find/id" method="post" class="form-group">
+<div class="container">
+    <div class="find_text">
+        <form action="/api/v1/user/find/id" method="post" class="form-group" id="find_form">
             <div class="form-group">
                 <input type="text" name="user_name" class="form-control" maxlength="20" placeholder="이름">
             </div>
@@ -29,10 +26,12 @@
                 <input type="text" name="user_studentnumber" class="form-control" maxlength="9" placeholder="학번">
             </div>
             <div>
-                <input type="submit" onclick="history.go(0);">찾기</input>
+                <button type="button" id="find_button">찾기</button>
             </div>
         </form>
     </div>
-{{/user_id}}
+</div>
+{{>layout/footer}}
+<script src="/find/js/find.js"></script>
 </body>
 </html>

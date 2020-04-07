@@ -77,8 +77,6 @@ function submitCheck(){
     var studentnumber_color = $('#studentnumber_check').css('color');
     var nickname_color = $('#nickname_check').css('color');
 
-    alert(id_color)
-
     if(id_color == "rgb(0, 128, 0)" && studentnumber_color == "rgb(0, 128, 0)" && nickname_color == "rgb(0, 128, 0)"){
         return true;
     } else if(id_color == "rgb(0, 128, 1)" && studentnumber_color == "rgb(0, 128, 1)" && nickname_color == "rgb(0, 128, 1)"){
