@@ -10,7 +10,7 @@
                 <span id="id_check" for="user_id"></span>
                 <input type="password" name="user_pw" class="form-control" minlength="4" maxlength="8" placeholder="PASSWORD" required><br>
                 <input type="text" name="user_name" class="form-control" maxlength="20" placeholder="이름" required><br>
-                <input type="text" name="user_studentnumber" class="form-control" id="user_studentnumber" maxlength="20" placeholder="학번" onkeypress="inNumber();" required><br>
+                <input type="text" name="user_studentnumber" class="form-control" id="user_studentnumber" maxlength="20" placeholder="학번" onkeypress="inNumber();" onkeydown="noHan(this);" required><br>
                 <span id="studentnumber_check" for="user_studentnumber"></span>
                 <input type="text" name="user_nickname" class="form-control" id="user_nickname" maxlength="20" placeholder="별명" required><br>
                 <span id="nickname_check" for="user_nickname"></span>

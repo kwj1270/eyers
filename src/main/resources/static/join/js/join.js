@@ -92,3 +92,10 @@ function inNumber(){
      event.returnValue=false;
   }
 }
+
+function noHan(obj){
+    if(event.keyCode == 8 || event.keyCode == 9 || event.keyCode == 37 || event.keyCode == 39 || event.keyCode == 46 ){
+        return ;
+    }
+    obj.value = obj.value.replace(/[\ㄱ-ㅎ ㅏ-ㅣ 가-힣]/g,'');
+}
