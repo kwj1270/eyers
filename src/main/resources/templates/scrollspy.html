@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/sidenavbar.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/custom.css">
+    <style>
+        .navbar-nav #navbar-menue {
+          margin: 0;
+          padding: 0;
+          list-style-type: none;
+        }
+        .navbar-nav #navbar-menue li {
+          position: relative;
+          min-width: 200px;
+          text-align: right;
+        }
+      
+        .navbar-nav #navbar-menue li .dot{
+          display: block;
+          color: #fff;
+          padding: 5px 0;
+        }
+      
+      </style>
+</head>
+<body data-spy="scroll" data-target=".navbar" data-offset="50">
+    <header>  
+        <nav class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top">  
+            <!-- 메뉴의 홈페이지 이름 -->	
+          <a class="navbar-brand" href="#">OBAKSA</a>	
+          <!-- 모바일때 표시되는 메뉴 버튼(PC 버젼에서는 보이지 않는다.)  -->	
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">	
+            <span class="navbar-toggler-icon"></span>	
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">	
+          <ul class="navbar-nav" id="navbar-menue">
+            <li class="nav-item">
+              <a class="nav-link dot active" href="#home">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link dot" href="#">메뉴판</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link dot" href="#">다육이 사진</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link dot" href="#">게시글</a>
+             </li>
+            <li class="nav-item">
+                <a class="nav-link dot" href="#">찾아 오시는 길</a>
+            </li>
+          </ul>
+          </div>	
+        </nav>
+        <nav id="sidenavbar" class="sidenavbar">
+            <ul class="sidenav-menu">
+                <li>
+                    <a data-scroll="home" href="#home" class="side-dot active">
+                        <span>Home</span>
+                    </a>
+                </li>
+                <li>
+                    <a data-scroll="one" href="#one" class="side-dot">
+                        <span>one</span>
+                    </a>
+                </li>
+                <li>
+                    <a data-scroll="two" href="#two" class="side-dot">
+                        <span>two</span>
+                    </a>
+                </li>
+                <li>
+                    <a data-scroll="three" href="#three" class="side-dot">
+                        <span>Three</span>
+                    </a>
+                </li>
+                <li>
+                    <a data-scroll="four" href="#four" class="side-dot">
+                        <span>Four</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>          
+      </header>
+    <!-- Start sidenav Section -->
+    
+    <!-- End sidenav Section -->
+    <section id="home"></section>
+    <section id="one"></section>
+    <section id="two"></section>
+    <section id="three"></section>
+    <section id="four"></section>
+
+<footer>
+    <div class="footer-container">
+        <address>(55011) 전북 전주시 완산구 아중로 33, 301호</address>
+        <p>TEL: 063-288-0488 | FAX: 063-232-0466</p>
+        <p class="copy">Copyrights (C)2020 한국정보통계. ALL RIGHTS RESERVED.</p>
+    </div>
+</footer>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src="./js/scrollspy.js"></script>
+<script src="./js/bootstrap.js"></script>
+</body>
+</html>
