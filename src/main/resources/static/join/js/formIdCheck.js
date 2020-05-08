@@ -1,7 +1,7 @@
-	$("#user_id").change(function() {
-		var id = $('#user_id').val();
+	$("#userId").change(function() {
+		var id = $('#userId').val();
 		$.ajax({
-			url : 'join/check?user_id='+id,
+			url : 'join/check?userId='+id,
 			type : 'get',
 			success : function(useOK) {						
 				if (useOK == false) {

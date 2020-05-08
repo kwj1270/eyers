@@ -1,7 +1,7 @@
-$("#user_id").change(function(){
-var user_id = $('#user_id').val();
+$("#userId").change(function(){
+var userId = $('#userId').val();
 		$.ajax({
-			url : '/api/v1/join/id/check?user_id='+user_id,
+			url : '/api/v1/join/id/check?userId='+userId,
 			type : 'get',
 			success : function(useOK) {
 				if (useOK == false) {
@@ -9,7 +9,7 @@ var user_id = $('#user_id').val();
 						$("#id_check").text("사용중인 아이디입니다 (｡ŏ_ŏ。)");
 						$("#id_check").css("color", "red");
 					} else {
-						if(user_id == ""){
+						if(userId == ""){
 							$('#id_check').text('아이디를 입력해주세요 ღ\'ᴗ\'ღ');
 							$('#id_check').css('color', 'black');
 						} else{
@@ -23,17 +23,17 @@ var user_id = $('#user_id').val();
 			});
 		});
 
-$("#user_studentnumber").change(function(){
-var user_studentnumber = $('#user_studentnumber').val();
+$("#userStudentnumber").change(function(){
+var userStudentnumber = $('#userStudentnumber').val();
 		$.ajax({
-			url : '/api/v1/join/studentnumber/check?user_studentnumber='+user_studentnumber,
+			url : '/api/v1/join/studentnumber/check?userStudentnumber='+userStudentnumber,
 			type : 'get',
 			success : function(useOK) {
 				if (useOK == false) {
 						$("#studentnumber_check").text("사용중인 학번입니다 (｡ŏ_ŏ。)");
 						$("#studentnumber_check").css("color", "red");
 					} else {
-						if(user_studentnumber == ""){
+						if(userStudentnumber == ""){
 							$('#studentnumber_check').text('학번을 입력해주세요 ღ\'ᴗ\'ღ');
 							$('#studentnumber_check').css('color', 'black');
 						} else{
@@ -48,17 +48,17 @@ var user_studentnumber = $('#user_studentnumber').val();
 		});
 
 
-$("#user_nickname").change(function(){
-var user_nickname = $('#user_nickname').val();
+$("#userNickname").change(function(){
+var userNickname = $('#userNickname').val();
 		$.ajax({
-			url : '/api/v1/join/nickname/check?user_nickname='+user_nickname,
+			url : '/api/v1/join/nickname/check?userNickname='+userNickname,
 			type : 'get',
 			success : function(useOK) {
 				if (useOK == false) {
 						$("#nickname_check").text("사용중인 별명입니다 (｡ŏ_ŏ。)");
 						$("#nickname_check").css("color", "red");
 					} else {
-						if(user_nickname == ""){
+						if(userNickname == ""){
 							$('#nickname_check').text('별명을 입력해주세요 ღ\'ᴗ\'ღ');
 							$('#nickname_check').css('color', 'black');
 						} else{

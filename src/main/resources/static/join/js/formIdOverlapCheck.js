@@ -1,5 +1,5 @@
-	$("user_id").change(function() {
-		var id = $('#user_id').val();
+	$("userId").change(function() {
+		var id = $('#userId').val();
 		$.ajax({
 			url : 'idCheck.do?id='+id,
 			type : 'get',
