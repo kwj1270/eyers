@@ -1,14 +1,34 @@
 package net.iwinv.eyers1;
 
+import net.iwinv.eyers1.domain.notice.NoticeRepository;
+import net.iwinv.eyers1.domain.notice.NoticeVO;
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
+import org.springframework.context.annotation.Bean;
+
+import java.util.stream.IntStream;
 
 // 스프링부트의 자동설정, 스프링 Bean 읽기와 생성을 모두 자동으로 설정한다.
 // @EnableJpaAuditing
 @SpringBootApplication // @SpringBootApplication 있는 클래스가 가장 최상단 디렉토리에 위치해야 한다.
 public class Application{
     public static void main(String[] args) { SpringApplication.run(Application.class,args); }
+
+    @Bean
+    public CommandLineRunner initData(NoticeRepository noticeRepository){
+        return args -> IntStream.rangeClosed(1,52).forEach(i -> {
+            NoticeVO notice = NoticeVO.builder()
+                    .notice_title("test" + i)
+                    .notice_content("test" + i)
+                    .notice_name(i)
+                    .notice_date("123")
+                    .build();
+            noticeRepository.save(notice);
+        });
+    }
+
 }
 
 // 기존에는 apache tomcat을 이용하여 웹 서버를 구동시키지만

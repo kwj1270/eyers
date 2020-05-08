@@ -13,7 +13,6 @@ import org.springframework.transaction.annotation.Transactional;
 @RequiredArgsConstructor
 @Service
 public class UserService {
-
     private final UserRepository userRepository;
 
     @Transactional  // 저장하고 seq 값 반환
@@ -28,9 +27,8 @@ public class UserService {
 
     @Transactional // id 중복 체크
     public boolean idCheck(String user_id) {
-        User user = userRepository.idCheck(user_id);
         boolean useOk = false;
-        if (user == null) {
+        if (userRepository.idCheck(user_id) == null) {
             useOk = true;
         }
         return useOk;
@@ -38,9 +36,8 @@ public class UserService {
 
     @Transactional  // 학번 중복 체크
     public boolean studentnumberCheck(String user_studentnumber) {
-        User user = userRepository.studentnumberCheck(user_studentnumber);
         boolean useOk = false;
-        if (user == null) {
+        if (userRepository.studentnumberCheck(user_studentnumber) == null) {
             useOk = true;
         }
         return useOk;
@@ -48,9 +45,8 @@ public class UserService {
 
     @Transactional  // 별명 중복 체크
     public boolean nicknameCheck(String user_nickname) {
-        User user = userRepository.nicknameCheck(user_nickname);
         boolean useOk = false;
-        if (user == null) {
+        if (userRepository.nicknameCheck(user_nickname) == null) {
             useOk = true;
         }
         return useOk;
