@@ -24,7 +24,7 @@ public class IndexController {
     @GetMapping("/")
     public String index(Model model, @LoginUser SessionUser user){
         if(user != null){
-            model.addAttribute("user_nickname", user.getUser_nickname());
+            model.addAttribute("userNickname", user.getUserNickname());
             return "redirect:main2";
         } else {
             return "redirect:login";
@@ -36,7 +36,7 @@ public class IndexController {
     @GetMapping("/main2")
     public String main(Model model, @LoginUser SessionUser user){
         if(user != null){
-            model.addAttribute("user_nickname", user.getUser_nickname());
+            model.addAttribute("userNickname", user.getUserNickname());
             return "main2";
         } else {
             return "redirect:login";

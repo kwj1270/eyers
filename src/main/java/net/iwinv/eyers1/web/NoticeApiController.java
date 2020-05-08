@@ -1,6 +1,5 @@
 package net.iwinv.eyers1.web;
 
-import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import net.iwinv.eyers1.service.notice.NoticeService;
 import net.iwinv.eyers1.web.dto.*;
@@ -15,20 +14,20 @@ public class NoticeApiController {
     @PostMapping("/api/v1/notice")
     public Long save(@RequestBody NoticeSaveRequestDto requestDto){return noticeService.save(requestDto);}
 
-    @PutMapping("/api/v1/notice/{user_seq}")
-    public Long update(@PathVariable Long notice_seq, @RequestBody NoticeUpdateRequestDto requestDto){
-        return noticeService.update(notice_seq,requestDto);
+    @PutMapping("/api/v1/notice/{noticeSeq}")
+    public Long update(@PathVariable Long noticeSeq, @RequestBody NoticeUpdateRequestDto requestDto){
+        return noticeService.update(noticeSeq,requestDto);
     }
 
-    @GetMapping("/api/v1/notice/{notice_seq}")
-    public NoticeResponseDto findById (@PathVariable Long notice_seq) {
-        return noticeService.findById(notice_seq);
+    @GetMapping("/api/v1/notice/{noticeSeq}")
+    public NoticeResponseDto findById (@PathVariable Long noticeSeq) {
+        return noticeService.findById(noticeSeq);
     }
 
-    @DeleteMapping("/api/v1/notice/{notice_seq}")
-    public Long delete(@PathVariable Long notice_seq){
-        noticeService.delete(notice_seq);
-        return notice_seq;
+    @DeleteMapping("/api/v1/notice/{noticeSeq}")
+    public Long delete(@PathVariable Long noticeSeq){
+        noticeService.delete(noticeSeq);
+        return noticeSeq;
     }
 
 }

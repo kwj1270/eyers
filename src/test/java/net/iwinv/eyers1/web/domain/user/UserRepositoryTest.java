@@ -28,20 +28,20 @@ public class UserRepositoryTest {
     public void 회원저장_불러오기(){
         // given - 저장을 위한 테스트 데이터 준
 
-        String user_id  = "kwj1270";
-        String user_pw = "rladnwo1";
-        String user_name = "김우재";
-        String user_studentnumber = "201512014";
-        String user_nickname = "우지르";
-        Role user_role = Role.USER;
+        String userId  = "kwj1270";
+        String userPw = "rladnwo1";
+        String userName = "김우재";
+        String userStudentnumber = "201512014";
+        String userNickname = "우지르";
+        Role userRole = Role.USER;
 
         userRepository.save(User.builder()
-                .user_id(user_id)
-                .user_pw(user_pw)
-                .user_name(user_name)
-                .user_studentnumber(user_studentnumber)
-                .user_nickname(user_nickname)
-                .user_role(user_role)
+                .userId(userId)
+                .userPw(userPw)
+                .userName(userName)
+                .userStudentnumber(userStudentnumber)
+                .userNickname(userNickname)
+                .userRole(userRole)
                 .build());
 
         // when
@@ -49,12 +49,12 @@ public class UserRepositoryTest {
 
         // then 테스트 준비
         User user = userList.get(0);
-        assertThat(user.getUser_id()).isEqualTo(user_id);
-        assertThat(user.getUser_pw()).isEqualTo(user_pw);
-        assertThat(user.getUser_name()).isEqualTo(user_name);
-        assertThat(user.getUser_studentnumber()).isEqualTo(user_studentnumber);
-        assertThat(user.getUser_nickname()).isEqualTo(user_nickname);
-        assertThat(user.getUser_role()).isEqualTo(Role.USER);
+        assertThat(user.getUserId()).isEqualTo(userId);
+        assertThat(user.getUserPw()).isEqualTo(userPw);
+        assertThat(user.getUserName()).isEqualTo(userName);
+        assertThat(user.getUserStudentnumber()).isEqualTo(userStudentnumber);
+        assertThat(user.getUserNickname()).isEqualTo(userNickname);
+        assertThat(user.getUserRole()).isEqualTo(Role.USER);
     }
 
 }

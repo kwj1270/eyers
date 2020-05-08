@@ -15,20 +15,20 @@ public class UserApiController {
     @PostMapping("/api/v1/user")
     public Long save(@RequestBody UserSaveRequestDto requestDto){return userService.save(requestDto);}
 
-    @PutMapping("/api/v1/user/{user_seq}")
-    public Long update(@PathVariable Long user_seq, @RequestBody UserUpdateRequestDto requestDto){
-        return userService.update(user_seq,requestDto);
+    @PutMapping("/api/v1/user/{userSeq}")
+    public Long update(@PathVariable Long userSeq, @RequestBody UserUpdateRequestDto requestDto){
+        return userService.update(userSeq,requestDto);
     }
 
-    @GetMapping("/api/v1/user/{user_seq}")
-    public UserResponseDto findById (@PathVariable Long user_seq) {
-        return userService.findById(user_seq);
+    @GetMapping("/api/v1/user/{userSeq}")
+    public UserResponseDto findById (@PathVariable Long userSeq) {
+        return userService.findById(userSeq);
     }
 
-    @DeleteMapping("/api/v1/user/{user_seq}")
-    public Long delete(@PathVariable Long user_seq){
-        userService.delete(user_seq);
-        return user_seq;
+    @DeleteMapping("/api/v1/user/{userSeq}")
+    public Long delete(@PathVariable Long userSeq){
+        userService.delete(userSeq);
+        return userSeq;
     }
 
 

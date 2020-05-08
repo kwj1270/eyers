@@ -7,8 +7,10 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <title>EYERS</title>
 </head>
-<body cellpadding="0" cellspacing="0" marginleft="0" margintop="0" width="100%" height="100%" align="center">
-<h1>게시판</h1>
+<body class="container">
+<div class="jumbotron">
+    <h2>스프링 부트 게시판</h2>
+</div>
 <table class="table table-horizontal table-bordered">
     <thead class="thead-string">
     <tr>
@@ -20,15 +22,26 @@
     </thead>
     <tbody>
     {{#notice}}
-    <tr>
-        <td>{{notice_seq}}</td>
-        <td><a href="/notice/read/{{notice_seq}}">{{notice_title}}</a></td>
-        <td>{{notice_name}}</td>
-        <td>{{notice_date}}</td>
-    </tr>
+        <tr>
+            <td>{{noticeSeq}}</td>
+            <td><a href="/notice/read/{{noticeSeq}}">{{noticeTitle}}</a></td>
+            <td>{{noticeName}}</td>
+            <td>{{noticeDate}}</td>
+        </tr>
     {{/notice}}
     </tbody>
 </table>
+<nav style="text-align: center;">
+    <ul class="pagination justify-content-end">
+        <li class="page-item"><a class="page-link" href="#" name="previous">Previous</a></li>
+        <li class="page-item active"><a class="page-link" href="#" name="page" value="1">1</a></li>
+        <li class="page-item"><a class="page-link" href="#" name="page" value="2">2</a></li>
+        <li class="page-item"><a class="page-link" href="#" name="page" value="3">3</a></li>
+        <li class="page-item"><a class="page-link" href="#" name="page" value="4">4</a></li>
+        <li class="page-item"><a class="page-link" href="#" name="page" value="5">5</a></li>
+        <li class="page-item"><a class="page-link" href="#" name="next">Next</a></li>
+    </ul>
+</nav>
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </body>

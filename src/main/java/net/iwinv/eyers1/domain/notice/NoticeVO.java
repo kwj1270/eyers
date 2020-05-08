@@ -17,26 +17,26 @@ public class NoticeVO {
     @GeneratedValue(strategy = GenerationType.IDENTITY) // PK가 INT 형이며 AUTO_INCREMENT 지원
     private long noticeSeq;
     @Column(nullable = false) // SQL == ....not null unique
-    private String notice_title;
+    private String noticeTitle;
     @Column(nullable = false, unique = true) // SQL == ....not null unique
-    private long notice_name; // 작성자
+    private long noticeName; // 작성자
     @Column(nullable = false) // SQL == ....not null unique
-    private String notice_content;
+    private String noticeContent;
     @Column(nullable = false) // SQL == ....not null unique
-    private String notice_date; // 대신 포멧을 데이트형식으로 넣고 데이트형식을 스트링으로 뺀다
+    private String noticeDate; // 대신 포멧을 데이트형식으로 넣고 데이트형식을 스트링으로 뺀다
 
     @Builder
-    public NoticeVO(String notice_title,long notice_name ,String notice_content, String notice_date){
-        this.notice_title = notice_title;
-        this.notice_name = notice_name;
-        this.notice_content = notice_content;
-        this.notice_date = notice_date;
+    public NoticeVO(String noticeTitle,long noticeName ,String noticeContent, String noticeDate){
+        this.noticeTitle = noticeTitle;
+        this.noticeName = noticeName;
+        this.noticeContent = noticeContent;
+        this.noticeDate = noticeDate;
     }
 
-    public NoticeVO update(String notice_title, String notice_content, String notice_date){
-        this.notice_title = notice_title;
-        this.notice_content = notice_content;
-        this.notice_date = notice_date;
+    public NoticeVO update(String noticeTitle, String noticeContent, String noticeDate){
+        this.noticeTitle = noticeTitle;
+        this.noticeContent = noticeContent;
+        this.noticeDate = noticeDate;
         return this;
     }
 }

@@ -22,15 +22,15 @@
     <div class="card-body">
         <div class="form-group">
             <form class="form-group" action="join" method="post" onsubmit="return submitCheck();">
-                <input type="text" name="user_id" class="form-control" id="user_id" maxlength="20" placeholder="ID" required><br>
-                <span id="id_check" for="user_id"></span>
-                <input type="password" name="user_pw" class="form-control" minlength="4" maxlength="8" placeholder="PASSWORD" required><br>
-                <input type="text" name="user_name" class="form-control" maxlength="20" placeholder="이름" required><br>
-                <input type="text" name="user_studentnumber" class="form-control" id="user_studentnumber" maxlength="20" placeholder="학번" onkeypress="inNumber();" onkeydown="noHan(this);" required><br>
-                <span id="studentnumber_check" for="user_studentnumber"></span>
-                <input type="text" name="user_nickname" class="form-control" id="user_nickname" maxlength="20" placeholder="별명" required><br>
-                <span id="nickname_check" for="user_nickname"></span>
-                <input type="hidden" name="user_role" value="USER" readonly>
+                <input type="text" name="userId" class="form-control" id="userId" maxlength="20" placeholder="ID" required><br>
+                <span id="id_check" for="userId"></span>
+                <input type="password" name="userPw" class="form-control" minlength="4" maxlength="8" placeholder="PASSWORD" required><br>
+                <input type="text" name="userName" class="form-control" maxlength="20" placeholder="이름" required><br>
+                <input type="text" name="userStudentnumber" class="form-control" id="userStudentnumber" maxlength="20" placeholder="학번" onkeypress="inNumber();" onkeydown="noHan(this);" required><br>
+                <span id="studentnumber_check" for="userStudentnumber"></span>
+                <input type="text" name="userNickname" class="form-control" id="userNickname" maxlength="20" placeholder="별명" required><br>
+                <span id="nickname_check" for="userNickname"></span>
+                <input type="hidden" name="userRole" value="USER" readonly>
                 <button type="submit" class="btn btn-lg btn-primary btn-block">Join</button>
                 <button type="button" class="btn btn-lg btn-primary btn-block" onclick="location.href='login'">Login</button>
             </form>

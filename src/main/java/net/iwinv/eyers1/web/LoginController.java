@@ -23,7 +23,7 @@ public class LoginController {
     @GetMapping("/login")
     public String toLogin(Model model, @LoginUser SessionUser user) {
         if (user != null) {
-            model.addAttribute("user_nickname", user.getUser_nickname());
+            model.addAttribute("userNickname", user.getUserNickname());
             return "redirect:main2";
         } else {
             return "login";

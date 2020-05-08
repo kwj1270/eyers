@@ -18,18 +18,18 @@ public class JoinApiController {
     private final UserService userService; // user와 관련된 서비스 (service.user에 UserService 존재)
 
     @GetMapping("/api/v1/join/id/check") // id 중복 체크
-    public boolean idCheck(@RequestParam("user_id") String user_id) {
-        System.out.println(user_id);
-        return userService.idCheck(user_id);
+    public boolean idCheck(@RequestParam("userId") String userId) {
+        System.out.println(userId);
+        return userService.idCheck(userId);
     }
 
     @GetMapping("/api/v1/join/studentnumber/check") // 학번 중복 체크
-    public boolean studentnumberCheck(@RequestParam("user_studentnumber") String user_studentnumber) {
-        return userService.studentnumberCheck(user_studentnumber);
+    public boolean studentnumberCheck(@RequestParam("userStudentnumber") String userStudentnumber) {
+        return userService.studentnumberCheck(userStudentnumber);
     }
 
     @GetMapping("/api/v1/join/nickname/check") // 별명 중복 체크
-    public boolean nicknameCheck(@RequestParam("user_nickname") String user_nickname) {
-        return userService.nicknameCheck(user_nickname);
+    public boolean nicknameCheck(@RequestParam("userNickname") String userNickname) {
+        return userService.nicknameCheck(userNickname);
     }
 }

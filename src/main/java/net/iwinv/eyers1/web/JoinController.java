@@ -24,7 +24,7 @@ public class JoinController {
     @GetMapping("/join") // get 방식으로 접근시 페이지 이동 처리
     public String toJoin(Model model, @LoginUser SessionUser user){
         if(user != null){
-            model.addAttribute("user_nickname", user.getUser_nickname());
+            model.addAttribute("userNickname", user.getUserNickname());
             return "redirect:main2";
         }else{
             return "join";
@@ -32,12 +32,12 @@ public class JoinController {
     }
 
     @PostMapping("/join") // post 방식으로 접근시 CRUD 중 CREATE -> Save 진행
-    public String join(UserSaveRequestDto requestDto, @RequestParam("user_role") String user_role){
+    public String join(UserSaveRequestDto requestDto, @RequestParam("userRole") String userRole){
         // enum 에 관한 정보는 넣기 어렵기에 controller 에서 처리
-        if(user_role.equals("USER")){
-            requestDto.setUser_role(Role.USER);
-        } else if(user_role.equals("ADMIN")){
-            requestDto.setUser_role(Role.ADMIN);
+        if(userRole.equals("USER")){
+            requestDto.setUserRole(Role.USER);
+        } else if(userRole.equals("ADMIN")){
+            requestDto.setUserRole(Role.ADMIN);
         } else{
             return "join";
         }

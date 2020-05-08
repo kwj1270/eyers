@@ -12,13 +12,13 @@ import lombok.Setter;
 @NoArgsConstructor // 생성자 의존성 주입
 public class UserLoginRequestDto {
 
-    private String user_id;
-    private String user_pw;
+    private String userId;
+    private String userPw;
 
     @Builder
-    public UserLoginRequestDto(String user_id, String user_pw){
-        this.user_id = user_id;
-        this.user_pw = user_pw;
+    public UserLoginRequestDto(String userId, String userPw){
+        this.userId = userId;
+        this.userPw = userPw;
     }
 
 }

@@ -33,7 +33,7 @@ public class IndexControllerTest {
 
     @Before
     public void setUp() throws Exception{
-        User user = User.builder().user_nickname("kwj1270").build();
+        User user = User.builder().userNickname("kwj1270").build();
         httpSession = new MockHttpSession();
         httpSession.setAttribute("user", new SessionUser(user));
         httpServletRequest = new MockHttpServletRequest();

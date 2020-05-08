@@ -10,13 +10,13 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class UserUpdateRequestDto {
 
-    private String user_pw;
-    private String user_nickname;
+    private String userPw;
+    private String userNickname;
 
     @Builder
-    public UserUpdateRequestDto(String user_pw, String user_nickname){
-        this.user_pw = user_pw;
-        this.user_nickname = user_nickname;
+    public UserUpdateRequestDto(String userPw, String userNickname){
+        this.userPw = userPw;
+        this.userNickname = userNickname;
     }
 
 }

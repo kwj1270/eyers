@@ -12,14 +12,14 @@ public class FindApiController {
     private final UserService userService;
 
     @PostMapping("/api/v1/user/find/id")
-    public String findId(@RequestParam("user_name") String user_name, @RequestParam("user_studentnumber") String user_studentnumber) {
-        String findOk = userService.findId(user_name, user_studentnumber);
+    public String findId(@RequestParam("userName") String userName, @RequestParam("userStudentnumber") String userStudentnumber) {
+        String findOk = userService.findId(userName, userStudentnumber);
         return findOk;
     }
 
     @PostMapping("/api/v1/user/find/pw")
-    public String findPassword(@RequestParam("user_id") String user_id, @RequestParam("user_name") String user_name, @RequestParam("user_studentnumber") String user_studentnumber) {
-        String findOk = userService.findPassword(user_id, user_name, user_studentnumber);
+    public String findPassword(@RequestParam("userId") String userId, @RequestParam("userName") String userName, @RequestParam("userStudentnumber") String userStudentnumber) {
+        String findOk = userService.findPassword(userId, userName, userStudentnumber);
         return findOk;
     }
 

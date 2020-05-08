@@ -10,15 +10,15 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class NoticeUpdateRequestDto {
 
-    private String notice_title;
-    private String notice_content;
-    private String notice_date;
+    private String noticeTitle;
+    private String noticeContent;
+    private String noticeDate; // 대신 포멧을 데이트형식으로 넣고 데이트형식을 스트링으로 뺀다
 
     @Builder
-    public NoticeUpdateRequestDto(String notice_title, String notice_content, String notice_date){
-        this.notice_title = notice_title;
-        this.notice_content = notice_content;
-        this.notice_date = notice_date;
+    public NoticeUpdateRequestDto(String noticeTitle, String noticeContent, String noticeDate){
+        this.noticeTitle = noticeTitle;
+        this.noticeContent = noticeContent;
+        this.noticeDate = noticeDate;
     }
 
 }

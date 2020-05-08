@@ -5,7 +5,6 @@ import net.iwinv.eyers1.domain.notice.NoticeVO;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 import org.springframework.context.annotation.Bean;
 
 import java.util.stream.IntStream;
@@ -20,10 +19,10 @@ public class Application{
     public CommandLineRunner initData(NoticeRepository noticeRepository){
         return args -> IntStream.rangeClosed(1,52).forEach(i -> {
             NoticeVO notice = NoticeVO.builder()
-                    .notice_title("test" + i)
-                    .notice_content("test" + i)
-                    .notice_name(i)
-                    .notice_date("123")
+                    .noticeTitle("test" + i)
+                    .noticeContent("test" + i)
+                    .noticeName(i)
+                    .noticeDate("123")
                     .build();
             noticeRepository.save(notice);
         });
