@@ -3,8 +3,10 @@ package net.iwinv.eyers1.service.notice;
 import lombok.RequiredArgsConstructor;
 import net.iwinv.eyers1.domain.notice.NoticeRepository;
 import net.iwinv.eyers1.domain.notice.NoticeVO;
-import net.iwinv.eyers1.util.PageRequest;
 import net.iwinv.eyers1.web.dto.*;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -17,8 +19,15 @@ import java.util.stream.Collectors;
 public class NoticeService {
     private final NoticeRepository noticeRepository;
 
+    @Transactional(readOnly = true)
+    public Page<NoticesListResponseDto> findAll(Pageable pageable) {
+        int page = (pageable.getPageNumber() == 0) ? 0 : (pageable.getPageNumber() - 1); // page는 index 처럼 0부터 시작
+        pageable = PageRequest.of(page, 10);
+        return noticeRepository.findAll(pageable).map(NoticesListResponseDto::new);
+    }
     // pageable 의 page 인덱스는 0부터 시작 한다.
     // 하지만 주로 게시판에서는 1부터 시작하기에 사용자가보려는 페이지에 -1 처리를 해준 것 이다.
+
 
     @Transactional
     public long save(NoticeSaveRequestDto requestDto){
@@ -32,21 +41,13 @@ public class NoticeService {
         return new NoticeResponseDto(entity);
     }
 
+    /*
     @Transactional(readOnly = true)
-    public List<NoticesListResponseDto> findAllDesc(@PageableDefault PageRequest pageable){ // page 랑 size 넘겨주기
-        List<NoticesListResponseDto> list = noticeRepository.findAll(pageable.of())
-                .stream()
-                .map(NoticesListResponseDto::new)
-                .collect(Collectors.toList());
-
-        list.forEach(s -> System.out.println(s.getNoticeSeq()));
-
+    public Page<NoticesListResponseDto> findAllDesc(@PageableDefault PageRequest pageable){ // page 랑 size 넘겨주기
         return noticeRepository.findAll(pageable.of())
-                .stream()
-                .map(NoticesListResponseDto::new)
-                .collect(Collectors.toList());
+                .map(NoticesListResponseDto::new);
     }
-
+*/
     @Transactional  // 업데이트 하고 seq 값 반
     public Long update(Long noticeSeq, NoticeUpdateRequestDto requestDto) { // 바꿀 대상이랑 매개변수 받기 (spring 컨테이너를 통한 객체 자동 생성 및 주입)
         NoticeVO notice = noticeRepository.findById(noticeSeq).orElseThrow(() -> // 람다식 사용 있으면 반환 없으면 던져라 (매개변수로 들어간 익명 객체)

@@ -1,7 +1,9 @@
 package net.iwinv.eyers1.util;
 
+import lombok.Getter;
 import org.springframework.data.domain.Sort;
 
+@Getter
 public final class PageRequest {
 
     private int page = 1;
