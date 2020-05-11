@@ -19,7 +19,6 @@ public class JoinApiController {
 
     @GetMapping("/api/v1/join/id/check") // id 중복 체크
     public boolean idCheck(@RequestParam("userId") String userId) {
-        System.out.println(userId);
         return userService.idCheck(userId);
     }
 

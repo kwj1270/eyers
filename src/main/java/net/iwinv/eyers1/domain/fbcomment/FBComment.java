@@ -15,9 +15,9 @@ public class FBComment {
     @Id // DB에서 PK임을 지정
     @GeneratedValue(strategy = GenerationType.IDENTITY) // PK가 INT 형이며 AUTO_INCREMENT 지원
     private long fbcommentSeq; // PK
-    @Column(nullable = false, unique = true) // SQL == ....not null unique
+    @Column(nullable = false) // SQL == ....not null unique
     private long fbcommentFreeboard; // FK
-    @Column(nullable = false, unique = true) // SQL == ....not null unique
+    @Column(nullable = false) // SQL == ....not null unique
     private long fbcommentName; // FK
     @Column(nullable = false) // SQL == ....not null
     private String fbcommentContent; // 내용

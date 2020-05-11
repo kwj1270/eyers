@@ -27,8 +27,28 @@
         </div>
     </div>
 </article>
+<article>
+    <div class="container">
+        <label for="fbcommentContent">comment</label>
+        <form name="commentInsertForm">
+            <div class="input-group">
+                <input type="hidden" name="fbcommentFreeboard" id="fbcommentFreeboard"  th:value="${freeboard.freeboardSeq}"/>
+                <input type="hidden" name="fbcommentName" id="fbcommentName" th:value="${session.user.userSeq}"/>
+                <input type="text" class="form-control" id="fbcommentContent" name="fbcommentContent" placeholder="내용을 입력하세요.">
+                <span class="input-group-btn">
+                    <button class="btn btn-default" type="button" id="btn-save">등록</button>
+               </span>
+            </div>
+        </form>
+    </div>
+    <div class="container">
+        <div class="commentList"></div>
+    </div>
+    </div>
+</article>
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 <script src="../freeboards/js/freeboard-detail.js"></script>
+<script src="../fbcomment/js/fbcomment.js"></script>
 </body>
 </html>

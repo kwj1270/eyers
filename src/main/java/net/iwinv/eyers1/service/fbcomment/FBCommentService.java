@@ -13,6 +13,9 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 @RequiredArgsConstructor
 @Service
 public class FBCommentService {
@@ -23,6 +26,13 @@ public class FBCommentService {
         int page = (pageable.getPageNumber() == 0) ? 0 : (pageable.getPageNumber() - 1); // page는 index 처럼 0부터 시작
         pageable = PageRequest.of(page, 10);
         return fbcommentRepository.findAll(pageable).map(FBCommentsListResponseDto::new);
+    }
+    @Transactional(readOnly = true)
+    public List<FBCommentsListResponseDto> findByFreeboardDesc(long fbcommentFreeboard) {
+        return fbcommentRepository.findByFreeboardDesc(fbcommentFreeboard)
+                .stream()
+                .map(FBCommentsListResponseDto::new)
+                .collect(Collectors.toList());
     }
 
     @Transactional

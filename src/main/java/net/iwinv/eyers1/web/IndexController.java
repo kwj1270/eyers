@@ -57,4 +57,10 @@ public class IndexController {
         return "find";
     }
 
+
+    @GetMapping("/utterances")
+    public String utterances(){
+        return "utterances";
+    }
+
 }
