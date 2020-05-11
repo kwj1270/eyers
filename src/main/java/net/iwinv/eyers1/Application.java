@@ -1,7 +1,11 @@
 package net.iwinv.eyers1;
 
+import net.iwinv.eyers1.domain.freeboard.Freeboard;
+import net.iwinv.eyers1.domain.freeboard.FreeboardRepository;
 import net.iwinv.eyers1.domain.notice.NoticeRepository;
 import net.iwinv.eyers1.domain.notice.NoticeVO;
+import net.iwinv.eyers1.domain.user.User;
+import net.iwinv.eyers1.web.dto.FreeboardResponseDto;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -16,8 +20,9 @@ public class Application{
     public static void main(String[] args) { SpringApplication.run(Application.class,args); }
 
     @Bean
-    public CommandLineRunner initData(NoticeRepository noticeRepository){
+    public CommandLineRunner initData(NoticeRepository noticeRepository, FreeboardRepository freeboardRepository){
         return args -> IntStream.rangeClosed(1,52).forEach(i -> {
+
             NoticeVO notice = NoticeVO.builder()
                     .noticeTitle("test" + i)
                     .noticeContent("test" + i)
@@ -25,6 +30,14 @@ public class Application{
                     .noticeDate("123")
                     .build();
             noticeRepository.save(notice);
+
+            Freeboard board = Freeboard.builder()
+                    .freeboardTitle("test" + i)
+                    .freeboardContent("test" + i)
+                    .freeboardName(i)
+                    .freeboardDate("123")
+                    .build();
+            freeboardRepository.save(board);
         });
     }
 

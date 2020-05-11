@@ -1,4 +1,4 @@
-var notice_detail = {
+var freeboard_detail = {
     init : function () {
         var _this = this;
         $('#btn-list').on('click', function(){
@@ -13,27 +13,27 @@ var notice_detail = {
     },
 
     list : function () {
-        window.location.href = 'http://localhost:8080/notice'
+        window.location.href = 'http://localhost:8080/freeboard'
     },
     update : function () {
-        var stringArr = document.location.href.split("http://localhost:8080/notice/");
-        var noticeSeq = stringArr[1];
-        window.location.href = 'http://localhost:8080/notice/'+noticeSeq+'/update'
+        var stringArr = document.location.href.split("http://localhost:8080/freeboard/");
+        var freeboardSeq = stringArr[1];
+        window.location.href = 'http://localhost:8080/freeboard/'+freeboardSeq+'/update'
     },
     delete : function () {
     var link = document.location.href; console.log(link);
-    var noticeSeq = document.location.href.split("http://localhost:8080/notice/");
+    var freeboardSeq = document.location.href.split("http://localhost:8080/freeboard/");
         $.ajax({
             type: 'DELETE',
-            url: '/api/v1/notice/' + noticeSeq,
+            url: '/api/v1/freeboard/' + freeboardSeq,
             dataType: 'json',
             contentType: 'application/json; charset=utf-8',
         }).done(function(){
             alert('글이 삭제되었습니다.');
-            window.location.href = "/notice";
+            window.location.href = "/freeboard";
         }).fail(function(error){
             alert(JSON.stringify(error));
         });
     }
 };
-notice_detail.init();
+freeboard_detail.init();

@@ -9,26 +9,26 @@
     <title>EYERS</title>
 </head>
 <body>
-<h2>공지 사항 수정</h2>
+<h2>자유 게시판 수정</h2>
 <div class="col-md-12">
     <div class="col-md-4">
         <form>
-            <input type="hidden" id="noticeDate" th:value="${notice.noticeDate}" readonly>
+            <input type="hidden" id="freeboardDate" th:value="${freeboard.freeboardDate}" readonly>
             <div class="form-group">
-                <label for="noticeSeq">글 번</label>
-                <input type="text" class="form-control" id="noticeSeq" th:value="${notice.noticeSeq}" readonly>
+                <label for="freeboardSeq">글 번</label>
+                <input type="text" class="form-control" id="freeboardSeq" th:value="${freeboard.freeboardSeq}" readonly>
             </div>
             <div class="form-group">
-                <label for="noticeTitle">제목</label>
-                <input type="text" class="form-control" id="noticeTitle" th:value="${notice.noticeTitle}">
+                <label for="freeboardTitle">제목</label>
+                <input type="text" class="form-control" id="freeboardTitle" th:value="${freeboard.freeboardTitle}">
             </div>
             <div class="form-group">
-                <label for="noticeName"> 작성자</label>
-                <input type="text" class="form-control" id="noticeName" th:value="${notice.noticeName}" readonly>
+                <label for="freeboardName"> 작성자</label>
+                <input type="text" class="form-control" id="freeboardName" th:value="${freeboard.freeboardName}" readonly>
             </div>
             <div class="form-group">
-                <label for="noticeContent"> 내용</label>
-                <textarea class="form-control" id="noticeContent" th:text="${notice.noticeContent}"></textarea>
+                <label for="freeboardContent"> 내용</label>
+                <textarea class="form-control" id="freeboardContent" th:text="${freeboard.freeboardContent}"></textarea>
             </div>
         </form>
         <button type="button" class="btn btn-primary" id="btn-update">수정</button>
@@ -38,6 +38,6 @@
 </div>
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-<script src="../../notices/js/notice-update.js"></script>
+<script src="../../freeboards/js/freeboard-update.js"></script>
 </body>
 </html>

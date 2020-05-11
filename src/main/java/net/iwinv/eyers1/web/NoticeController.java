@@ -4,8 +4,6 @@ import lombok.RequiredArgsConstructor;
 import net.iwinv.eyers1.config.LoginUser;
 import net.iwinv.eyers1.config.dto.SessionUser;
 import net.iwinv.eyers1.service.notice.NoticeService;
-import net.iwinv.eyers1.util.PageRequest;
-import net.iwinv.eyers1.web.dto.NoticeResponseDto;
 import net.iwinv.eyers1.web.dto.NoticesListResponseDto;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -38,6 +36,16 @@ public class NoticeController {
         if (user != null) {
             model.addAttribute("notice",noticeService.findById(noticeSeq));
             return "notice-detail";
+        } else {
+            return "login";
+        }
+    }
+
+    @RequestMapping("/notice/{noticeSeq}/update")
+    public String toUpdateNotice(@PathVariable Long noticeSeq,Model model, @LoginUser SessionUser user) {
+        if (user != null) {
+            model.addAttribute("notice",noticeService.findById(noticeSeq));
+            return "notice-update";
         } else {
             return "login";
         }
