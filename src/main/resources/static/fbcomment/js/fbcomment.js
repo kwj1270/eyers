@@ -4,12 +4,14 @@ var fbcomment = {
         $('#btn-save').on('click', function(){
             _this.save();
         })
+        /*
         $('#btn-updateForm').on('click', function(){
             _this.updateForm();
         })
         $('#btn-update').on('click', function(){
             _this.update();
         })
+        */
     },
     commentList: function(){
     var fbcommentFreeboard = $('#fbcommentFreeboard').val();
@@ -23,8 +25,8 @@ var fbcomment = {
                 $.each(data, function(key, value){
                     a += '<div class="commentArea" style="border-bottom:1px solid darkgray; margin-bottom: 15px;">';
                     a += '<div class="commentInfo'+value.fbcommentSeq+'">'+'댓글 번호 : '+value.fbcommentSeq+' / 작성자 : '+value.fbcommentName;
-                    a += '<button class="btn btn-default" type="button" onclick="fbcomment.updateForm('+value.fbcommentSeq+', '+value.fbcommentName+' ,\''+value.fbcommentContent+'\');"> 수정 </button>';
-                    a += '<button class="btn btn-default" type="button" onclick="fbcomment.delete('+value.fbcommentSeq+',\''+value.fbcommentName+'\');"> 삭제 </button>';
+                    a += '<button class="btn btn-default" id="btn-updateForm" type="button" onclick="fbcomment.updateForm('+value.fbcommentSeq+', '+value.fbcommentName+' ,\''+value.fbcommentContent+'\');"> 수정 </button>';
+                    a += '<button class="btn btn-default" id="btn-delete" type="button" onclick="fbcomment.delete('+value.fbcommentSeq+',\''+value.fbcommentName+'\');"> 삭제 </button>';
                     a += '<div class="commentContent'+value.fbcommentSeq+'"> <p> 내용 : '+value.fbcommentContent +'</p>';
                     a += '</div></div></div>';
                 });
@@ -32,6 +34,21 @@ var fbcomment = {
             }).fail(function(error){
                 alert(JSON.stringify(error));
             });
+    },
+    updateForm : function(fbcommentSeq, fbcommentName, fbcommentContent){
+        var _this = this;
+        $('#btn-updateForm').text("취소");
+        $('#btn-updateForm').on('click', function(){
+            _this.commentList();
+        });
+        var a ='';
+        a += '<div class="input-group">';
+        a += '<input type="hidden" class="form-control" id="update_fbcommentSeq" value="'+fbcommentSeq+'"/>';
+        a += '<input type="hidden" class="form-control" id="update_fbcommentName" value="'+fbcommentName+'"/>';
+        a += '<input type="text" class="form-control" id="update_fbcommentContent" value="'+fbcommentContent+'"/>';
+        a += '<span class="input-group-btn"><button class="btn btn-default" type="button" onclick="fbcomment.update('+fbcommentSeq+');">수정</button></span>';
+        a += '</div>';
+        $('.commentContent'+fbcommentSeq).html(a);
     },
     save: function(){
         var _this = this;
@@ -54,16 +71,7 @@ var fbcomment = {
                 alert(JSON.stringify(error));
             });
     },
-    updateForm : function(fbcommentSeq, fbcommentName, fbcommentContent){
-        var a ='';
-        a += '<div class="input-group">';
-        a += '<input type="hidden" class="form-control" id="update_fbcommentSeq" value="'+fbcommentSeq+'"/>';
-        a += '<input type="hidden" class="form-control" id="update_fbcommentName" value="'+fbcommentName+'"/>';
-        a += '<input type="text" class="form-control" id="update_fbcommentContent" value="'+fbcommentContent+'"/>';
-        a += '<span class="input-group-btn"><button class="btn btn-default" type="button" onclick="fbcomment.update('+fbcommentSeq+');">수정</button></span>';
-        a += '</div>';
-        $('.commentContent'+fbcommentSeq).html(a);
-    },
+
     update: function(fbcommentSeq){
         var _this = this;
         var data = {
