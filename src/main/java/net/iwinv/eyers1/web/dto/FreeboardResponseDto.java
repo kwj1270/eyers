@@ -9,7 +9,7 @@ public class FreeboardResponseDto {
 
     private long freeboardSeq;
     private String freeboardTitle;
-    private long freeboardName; // 작성자
+    private String freeboardName; // 작성자
     private String freeboardContent;
     private String freeboardDate; // 대신 포멧을 데이트형식으로 넣고 데이트형식을 스트링으로 뺀다
 

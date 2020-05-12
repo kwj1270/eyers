@@ -13,13 +13,13 @@ public class NoticeSaveRequestDto {
 
 
     private String noticeTitle;
-    private long noticeName; // 작성자
+    private String noticeName; // 작성자
     private String noticeContent;
     private String noticeDate; // 대신 포멧을 데이트형식으로 넣고 데이트형식을 스트링으로 뺀다
 
 
     @Builder
-    public NoticeSaveRequestDto(String noticeTitle, Long noticeName, String noticeContent, String noticeDate){
+    public NoticeSaveRequestDto(String noticeTitle, String noticeName, String noticeContent, String noticeDate){
         this.noticeTitle = noticeTitle;
         this.noticeName = noticeName;
         this.noticeContent = noticeContent;

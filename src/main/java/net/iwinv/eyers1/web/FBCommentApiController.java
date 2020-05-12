@@ -27,7 +27,7 @@ public class FBCommentApiController {
     }
 
     @GetMapping("/api/v1/fbcomment/{fbcommentFreeboard}")
-    public List<FBCommentsListResponseDto> findByFreeboardDesc (@PathVariable Long fbcommentFreeboard) {
+    public List<FBCommentsListResponseDto> findByFreeboardDesc (@PathVariable String fbcommentFreeboard) {
         return fbcommentService.findByFreeboardDesc(fbcommentFreeboard);
     }
 

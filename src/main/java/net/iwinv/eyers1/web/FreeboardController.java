@@ -27,7 +27,7 @@ public class FreeboardController {
             model.addAttribute("freeboards", freeboards);
             return "freeboard";
         } else {
-            return "login";
+            return "redirect:login";
         }
     }
     @RequestMapping("/freeboard/write")
@@ -35,7 +35,7 @@ public class FreeboardController {
         if (user != null) {
             return "freeboard-write";
         } else {
-            return "login";
+            return "redirect:../login";
         }
     }
     @RequestMapping("/freeboard/{freeboardSeq}")
@@ -44,7 +44,7 @@ public class FreeboardController {
             model.addAttribute("freeboard",freeboardService.findById(freeboardSeq));
             return "freeboard-detail";
         } else {
-            return "login";
+            return "redirect:../login";
         }
     }
 
@@ -54,7 +54,7 @@ public class FreeboardController {
             model.addAttribute("freeboard",freeboardService.findById(freeboardSeq));
             return "freeboard-update";
         } else {
-            return "login";
+            return "redirect:../../login";
         }
     }
 }

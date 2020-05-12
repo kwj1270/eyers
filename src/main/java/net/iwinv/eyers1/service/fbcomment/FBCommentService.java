@@ -28,7 +28,7 @@ public class FBCommentService {
         return fbcommentRepository.findAll(pageable).map(FBCommentsListResponseDto::new);
     }
     @Transactional(readOnly = true)
-    public List<FBCommentsListResponseDto> findByFreeboardDesc(long fbcommentFreeboard) {
+    public List<FBCommentsListResponseDto> findByFreeboardDesc(String fbcommentFreeboard) {
         return fbcommentRepository.findByFreeboardDesc(fbcommentFreeboard)
                 .stream()
                 .map(FBCommentsListResponseDto::new)

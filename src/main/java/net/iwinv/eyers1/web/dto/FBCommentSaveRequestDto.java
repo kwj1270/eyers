@@ -11,12 +11,12 @@ import net.iwinv.eyers1.domain.fbcomment.FBComment;
 @NoArgsConstructor
 public class FBCommentSaveRequestDto {
 
-    private long fbcommentFreeboard;
-    private long fbcommentName; // 작성자
+    private String fbcommentFreeboard;
+    private String fbcommentName; // 작성자
     private String fbcommentContent;
 
     @Builder
-    public FBCommentSaveRequestDto(Long fbcommentFreeboard ,Long fbcommentName, String fbcommentContent){
+    public FBCommentSaveRequestDto(String fbcommentFreeboard ,String fbcommentName, String fbcommentContent){
         this.fbcommentFreeboard = fbcommentFreeboard;
         this.fbcommentName = fbcommentName;
         this.fbcommentContent = fbcommentContent;

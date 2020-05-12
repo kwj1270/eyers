@@ -24,7 +24,7 @@ public class LoginController {
     public String toLogin(Model model, @LoginUser SessionUser user) {
         if (user != null) {
             model.addAttribute("userNickname", user.getUserNickname());
-            return "redirect:main2";
+            return "redirect:main";
         } else {
             return "login";
         }
@@ -37,7 +37,7 @@ public class LoginController {
             return "login";
         }
         httpSession.setAttribute("user", new SessionUser(user));
-        return "redirect:main2";
+        return "redirect:main";
     }
 
     @GetMapping("/logout")

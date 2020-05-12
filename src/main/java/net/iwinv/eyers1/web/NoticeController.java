@@ -27,7 +27,7 @@ public class NoticeController {
             model.addAttribute("notices", notices);
             return "notice";
         } else {
-            return "login";
+            return "redirect:login";
         }
     }
 
@@ -37,7 +37,7 @@ public class NoticeController {
             model.addAttribute("notice",noticeService.findById(noticeSeq));
             return "notice-detail";
         } else {
-            return "login";
+            return "redirect:../login";
         }
     }
 
@@ -47,7 +47,7 @@ public class NoticeController {
             model.addAttribute("notice",noticeService.findById(noticeSeq));
             return "notice-update";
         } else {
-            return "login";
+            return "redirect:../../login";
         }
     }
 }

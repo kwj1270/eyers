@@ -16,15 +16,15 @@ public class FBComment {
     @GeneratedValue(strategy = GenerationType.IDENTITY) // PK가 INT 형이며 AUTO_INCREMENT 지원
     private long fbcommentSeq; // PK
     @Column(nullable = false) // SQL == ....not null unique
-    private long fbcommentFreeboard; // FK
+    private String fbcommentFreeboard; // FK
     @Column(nullable = false) // SQL == ....not null unique
-    private long fbcommentName; // FK
+    private String fbcommentName; // FK
     @Column(nullable = false) // SQL == ....not null
     private String fbcommentContent; // 내용
 
 
     @Builder // 생성자 위에 @Builder가 붙었다 이는 매개변수의 순서를 맞추지 않더라도 값을 할당받게 해준다.
-    public FBComment(long fbcommentSeq, long fbcommentFreeboard, long fbcommentName, String fbcommentContent){
+    public FBComment(long fbcommentSeq, String fbcommentFreeboard, String fbcommentName, String fbcommentContent){
         this.fbcommentSeq = fbcommentSeq;
         this.fbcommentFreeboard = fbcommentFreeboard;
         this.fbcommentName = fbcommentName;

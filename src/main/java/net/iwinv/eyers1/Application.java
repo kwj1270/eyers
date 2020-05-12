@@ -26,7 +26,7 @@ public class Application{
             NoticeVO notice = NoticeVO.builder()
                     .noticeTitle("test" + i)
                     .noticeContent("test" + i)
-                    .noticeName(i)
+                    .noticeName("test" + i)
                     .noticeDate("123")
                     .build();
             noticeRepository.save(notice);
@@ -34,7 +34,7 @@ public class Application{
             Freeboard board = Freeboard.builder()
                     .freeboardTitle("test" + i)
                     .freeboardContent("test" + i)
-                    .freeboardName(i)
+                    .freeboardName("test"+i)
                     .freeboardDate("123")
                     .build();
             freeboardRepository.save(board);

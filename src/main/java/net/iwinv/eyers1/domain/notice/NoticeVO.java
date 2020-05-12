@@ -18,15 +18,15 @@ public class NoticeVO {
     private long noticeSeq;
     @Column(nullable = false) // SQL == ....not null unique
     private String noticeTitle;
-    @Column(nullable = false, unique = true) // SQL == ....not null unique
-    private long noticeName; // 작성자
+    @Column(nullable = false) // SQL == ....not null unique
+    private String noticeName; // 작성자
     @Column(nullable = false) // SQL == ....not null unique
     private String noticeContent;
     @Column(nullable = false) // SQL == ....not null unique
     private String noticeDate; // 대신 포멧을 데이트형식으로 넣고 데이트형식을 스트링으로 뺀다
 
     @Builder
-    public NoticeVO(String noticeTitle,long noticeName ,String noticeContent, String noticeDate){
+    public NoticeVO(String noticeTitle,String noticeName ,String noticeContent, String noticeDate){
         this.noticeTitle = noticeTitle;
         this.noticeName = noticeName;
         this.noticeContent = noticeContent;

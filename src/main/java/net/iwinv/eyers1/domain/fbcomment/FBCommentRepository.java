@@ -15,11 +15,9 @@ public interface FBCommentRepository extends JpaRepository<FBComment, Long> {
     List<FBComment> findAllDesc();
 
     @Query("SELECT fbc FROM FBComment fbc WHERE fbc.fbcommentFreeboard = :fbcommentFreeboard ORDER BY fbc.fbcommentSeq DESC")
-    List<FBComment> findByFreeboardDesc(@Param("fbcommentFreeboard") long fbcommentFreeboard);
+    List<FBComment> findByFreeboardDesc(@Param("fbcommentFreeboard") String fbcommentFreeboard);
 
     @Query("SELECT fbc FROM FBComment fbc WHERE fbc.fbcommentFreeboard = :fbcommentFreeboard ORDER BY fbc.fbcommentSeq ASC")
-    List<FBComment> findByFreeboardAsc(@Param("fbcommentFreeboard") long fbcommentFreeboard);
+    List<FBComment> findByFreeboardAsc(@Param("fbcommentFreeboard") String fbcommentFreeboard);
 
-    @Query("SELECT u FROM User u WHERE u.userId = :userId AND u.userPw = :userPw")
-    User login(@Param("userId") String userId, @Param("userPw") String userPw);
 }

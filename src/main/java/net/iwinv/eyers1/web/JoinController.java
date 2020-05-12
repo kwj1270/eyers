@@ -25,7 +25,7 @@ public class JoinController {
     public String toJoin(Model model, @LoginUser SessionUser user){
         if(user != null){
             model.addAttribute("userNickname", user.getUserNickname());
-            return "redirect:main2";
+            return "redirect:main";
         }else{
             return "join";
         }
@@ -43,6 +43,6 @@ public class JoinController {
         }
         SessionUser user =  new SessionUser(userService.join(requestDto)); // 로그인 성공시 user 정보 가져옴
         httpSession.setAttribute("user", user); // 받아온 user 정보를 session 에 저장
-        return "redirect:main2";
+        return "redirect:main";
     }
 }

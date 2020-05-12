@@ -8,8 +8,8 @@ import net.iwinv.eyers1.domain.fbcomment.FBComment;
 public class FBCommentResponseDto {
 
     private long fbcommentSeq;
-    private long fbcommentFreeboard;
-    private long fbcommentName; // 작성자
+    private String fbcommentFreeboard;
+    private String fbcommentName; // 작성자
     private String fbcommentContent;
 
     public FBCommentResponseDto(FBComment entity){

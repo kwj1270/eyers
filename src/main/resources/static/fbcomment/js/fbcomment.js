@@ -25,7 +25,7 @@ var fbcomment = {
                 $.each(data, function(key, value){
                     a += '<div class="commentArea" style="border-bottom:1px solid darkgray; margin-bottom: 15px;">';
                     a += '<div class="commentInfo'+value.fbcommentSeq+'">'+'댓글 번호 : '+value.fbcommentSeq+' / 작성자 : '+value.fbcommentName;
-                    a += '<button class="btn btn-default" id="btn-updateForm" type="button" onclick="fbcomment.updateForm('+value.fbcommentSeq+', '+value.fbcommentName+' ,\''+value.fbcommentContent+'\');"> 수정 </button>';
+                    a += '<button class="btn btn-default" id="btn-updateForm" type="button" onclick="fbcomment.updateForm('+value.fbcommentSeq+', \''+value.fbcommentName+'\',\''+value.fbcommentContent+'\');"> 수정 </button>';
                     a += '<button class="btn btn-default" id="btn-delete" type="button" onclick="fbcomment.delete('+value.fbcommentSeq+',\''+value.fbcommentName+'\');"> 삭제 </button>';
                     a += '<div class="commentContent'+value.fbcommentSeq+'"> <p> 내용 : '+value.fbcommentContent +'</p>';
                     a += '</div></div></div>';
@@ -50,6 +50,7 @@ var fbcomment = {
         a += '</div>';
         $('.commentContent'+fbcommentSeq).html(a);
     },
+
     save: function(){
         var _this = this;
         var data = {

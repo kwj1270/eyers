@@ -8,8 +8,8 @@ import net.iwinv.eyers1.domain.freeboard.Freeboard;
 public class FBCommentsListResponseDto {
 
     private long fbcommentSeq;
-    private long fbcommentFreeboard;
-    private long fbcommentName; // 작성자
+    private String fbcommentFreeboard;
+    private String fbcommentName; // 작성자
     private String fbcommentContent;
 
     public FBCommentsListResponseDto(FBComment entity){

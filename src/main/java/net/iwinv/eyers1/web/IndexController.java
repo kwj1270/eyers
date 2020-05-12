@@ -25,7 +25,7 @@ public class IndexController {
     public String index(Model model, @LoginUser SessionUser user){
         if(user != null){
             model.addAttribute("userNickname", user.getUserNickname());
-            return "redirect:main2";
+            return "redirect:main";
         } else {
             return "redirect:login";
         }
@@ -33,11 +33,11 @@ public class IndexController {
     // model을 사용하는 이유는 해당 웹페이지로 넘어갈 때 페이지에서 특정 객체를 필요하면
     // 이 객체를 model에 넣어서 보내줌으로 페이지에서는 해당 객체를 사용할 수 있게 된다.
 
-    @GetMapping("/main2")
+    @GetMapping("/main")
     public String main(Model model, @LoginUser SessionUser user){
         if(user != null){
             model.addAttribute("userNickname", user.getUserNickname());
-            return "main2";
+            return "main";
         } else {
             return "redirect:login";
         }

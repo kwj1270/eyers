@@ -33,7 +33,7 @@
         <form name="commentInsertForm">
             <div class="input-group">
                 <input type="hidden" name="fbcommentFreeboard" id="fbcommentFreeboard"  th:value="${freeboard.freeboardSeq}"/>
-                <input type="hidden" name="fbcommentName" id="fbcommentName" th:value="${session.user.userSeq}"/>
+                <input type="hidden" name="fbcommentName" id="fbcommentName" th:value="${session.user.userId}"/>
                 <input type="text" class="form-control" id="fbcommentContent" name="fbcommentContent" placeholder="내용을 입력하세요.">
                 <span class="input-group-btn">
                     <button class="btn btn-default" type="button" id="btn-save">등록</button>
