@@ -33,7 +33,8 @@
 <nav style="text-align: center;">
     <ul class="pagination"
         th:with="start=${T(Math).floor(notices.number/10)*10 + 1},
-                    last=(${start + 9 < notices.totalPages ? start + 9 : notices.totalPages})">
+                    last=(${start + 9 < notices.totalPages ? start + 9 : notices.totalPages}),
+                    last=(${last < 1 ? 1 : last})">
         <li>
             <a class="page-link" th:href="@{/notice(page=1)}" aria-label="First">
                 <span aria-hidden="true">First</span>

@@ -1,46 +1,45 @@
- $(document).ready(function() {
-      var $menu = $(".nav-menu");
-      var $menu_a = $("a", $menu);
-      var id = false;
-      var sections = [];
-      var hash = function(h) {
-        if (history.pushState) {
-          history.pushState(null, null, h);
-        } else {
-          location.hash = h;
-        }
-      };
+var main = {
+    init: function(){
+        var _this = this;
+        $('#sidenavbar a.side-dot').on('click', function (e) {
+            var target = $(_this.attr('href')); //href 속성을 통해, section id 타겟을 잡음
 
-      $menu_a.click(function(event) {
-        event.preventDefault();
-        $("html, body").animate(
-          {
-            scrollTop: $($(this).attr("href")).offset().top - $(".nav").height()
-          },
-          {
-            duration: 700,
-            complete: hash($(this).attr("href"))
-          }
-        );
-      });
+            $('html, body').animate({
+                scrollTop: target.offset().top //target section의 좌표를 통해 꼭대기로 이동
+            }, 600);
 
-      $menu_a.each(function() {
-        sections.push($($(this).attr("href")));
-      });
+            _this.addClass('active');//active 클래스 부여
+            e.preventDefault(); //앵커를 통해 이동할때, URL에 #id가 붙지 않도록 함.
+        })
 
-      $(window).scroll(function(event) {
-        var scrolling = $(this).scrollTop() + $(this).height() / 3;
-        var scroll_id;
-        for (var i in sections) {
-          var section = sections[i];
-          if (scrolling > section.offset().top) {
-            scroll_id = section.attr("id");
-          }
-        }
-        if (scroll_id !== id) {
-          id = scroll_id;
-          $menu_a.removeClass("isactive");
-          $("a[href='#" + id + "']", $menu).addClass("isactive");
-        }
-      });
-    });
+        $(window).on('scroll', function () {
+            _this.findPosition();
+        })
+
+        $('.showIcon').mouseover(function () {
+            $('#logo').fadeIn(1000);
+        })
+
+
+        setTimeout(function () {
+            $('.fly-in-text').removeClass('hidden');
+            $('.show-slowly-text').removeClass('hidden');
+        }, 500);
+
+    },
+
+    findPosition : function(){
+        var _this = this;
+        $('section').each(function () {
+            if ((_this.offset().top - $(window).scrollTop()) < 20) {
+                link.removeClass('active');
+                $('#sidenavbar').find('[data-scroll="' + _this.attr('id') + '"]').addClass('active');
+            }
+        });
+    },
+}
+main.init();
+main.findPosition();
+AOS.init();
+
+

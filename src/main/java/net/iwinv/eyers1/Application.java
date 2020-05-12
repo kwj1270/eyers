@@ -22,7 +22,7 @@ public class Application{
     @Bean
     public CommandLineRunner initData(NoticeRepository noticeRepository, FreeboardRepository freeboardRepository){
         return args -> IntStream.rangeClosed(1,52).forEach(i -> {
-
+/*
             NoticeVO notice = NoticeVO.builder()
                     .noticeTitle("test" + i)
                     .noticeContent("test" + i)
@@ -30,7 +30,7 @@ public class Application{
                     .noticeDate("123")
                     .build();
             noticeRepository.save(notice);
-
+*/
             Freeboard board = Freeboard.builder()
                     .freeboardTitle("test" + i)
                     .freeboardContent("test" + i)

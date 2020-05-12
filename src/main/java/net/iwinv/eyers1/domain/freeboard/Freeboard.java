@@ -18,7 +18,7 @@ public class Freeboard {
     private long freeboardSeq;
     @Column(nullable = false) // SQL == ....not null unique
     private String freeboardTitle;
-    @Column(nullable = false, unique = true) // SQL == ....not null unique
+    @Column(nullable = false) // SQL == ....not null unique
     private long freeboardName;
     @Column(nullable = false) // SQL == ....not null
     private String freeboardContent;

@@ -30,10 +30,12 @@
     </tr>
     </tbody>
 </table>
+<button type="button" class="btn btn-default float-right" id="btn-freeboard-write">글쓰기</button>
 <nav style="text-align: center;">
     <ul class="pagination"
         th:with="start=${T(Math).floor(freeboards.number/10)*10 + 1},
-                    last=(${start + 9 < freeboards.totalPages ? start + 9 : freeboards.totalPages})">
+                    last=(${start + 9 < freeboards.totalPages ? start + 9 : freeboards.totalPages}),
+                    last=(${last < 1 ? 1 : last})">
         <li>
             <a class="page-link" th:href="@{/freeboard(page=1)}" aria-label="First">
                 <span aria-hidden="true">First</span>
@@ -61,5 +63,6 @@
 </nav>
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script src="freeboards/js/freeboard.js"></script>
 </body>
 </html>

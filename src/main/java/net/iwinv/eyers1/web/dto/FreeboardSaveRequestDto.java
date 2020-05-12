@@ -6,11 +6,14 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import net.iwinv.eyers1.domain.freeboard.Freeboard;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
+
 @Getter
 @Setter
 @NoArgsConstructor
 public class FreeboardSaveRequestDto {
-
 
     private String freeboardTitle;
     private long freeboardName; // 작성자

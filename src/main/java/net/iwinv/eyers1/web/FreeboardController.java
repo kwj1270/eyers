@@ -30,7 +30,14 @@ public class FreeboardController {
             return "login";
         }
     }
-
+    @RequestMapping("/freeboard/write")
+    public String toWriteFreeboard(@LoginUser SessionUser user) {
+        if (user != null) {
+            return "freeboard-write";
+        } else {
+            return "login";
+        }
+    }
     @RequestMapping("/freeboard/{freeboardSeq}")
     public String toDetailFreeboard(@PathVariable Long freeboardSeq,Model model, @LoginUser SessionUser user) {
         if (user != null) {

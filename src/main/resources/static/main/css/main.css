@@ -1,74 +1,79 @@
 * {
-  margin: 0;
-  padding: 0;
+    margin: 0;
+    padding: 0;
 }
 
-.nav {
-  background-color: rgba(51, 51, 51, 0.9);
-  position: fixed;
-  width: 100%;
-  height: 60px;
-  top: 0;
+body{
+    font-family: 'Raleway', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: #777;
 }
-.nav-menu li {
-    display: inline-block;
-    margin-right: -6px;
-    line-height: 60px;
+
+h1{
+
+    font-size: 36px;
+    color: #555;
+    font-weight: bold;
 }
-.nav-menu-item {
-    display: block;
-    padding: 0 20px;
+
+h3{
+    font-size: 24;
+    color: #333;
+    font-weight: bold;
+}
+
+.team img{
+    margin-top: -50px;
+}
+
+.team i {
+
+    font-size:26px;
+    color: #555;
+}
+
+
+.team p {
+font-weight: 500;
+}
+
+.team .card{
+    border-radius: 0;
+    box-shadow: 5px 5px 15px #e74c3c;
+    transition: all 0.3s ease-in;
+    -webkit-transition: all 0.3s ease-in;
+    -moz-transition: all 0.3s ease-in;
+}
+
+.team .card:hover{
+    background: #e74c3c;
     color: #fff;
-    text-decoration: none;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 5px 5px 1px #9E9E9E;
 }
-.nav-menu-item:hover,
-.isactive {
-    background-color: #222;
+
+.team .card:hover h3, .team .card:hover i{
     color: #fff;
 }
 
-.section {
-    margin-top: 60px;
-    line-height: 22px;
-}
-.padding-top10 {
-    padding-top:10px;
-}
+  .carousel-inner img {
+    width: 100%;
+    height: 100%;
+  }
+  .fade-inner img {
+    width: 100%;
+    height: 100%;
+  }
 
-#section-1 {
-    height: 1000px;
-    background-color: #3db296;
-    color: #fff;
-    padding: 20px;
-}
-#section-2 {
-  height: 1000px;
-  background-color: #e9852f;
-  color: #fff;
-  padding: 20px;
-}
-#section-3 {
-  height: 1000px;
-  background-color: #484e7a;
-  color: #fff;
-  padding: 20px;
-}
-#section-4 {
-  height: 1000px;
-  background-color: #95ca69;
-  color: #fff;
-  padding: 20px;
-}
-#section-5 {
-  height: 1000px;
-  background-color: #b4457e;
-  color: #fff;
-  padding: 20px;
-}
-
-footer {
-  height: 100px;
-  background-color: #333;
-  color: #fff;
-  padding: 20px;
-}
+  #logo {
+    display: none;
+    position: absolute;
+    left: 46%;
+    top: 20%;
+    width: auto;
+    height: auto;
+    max-width: 150px;
+    max-height: 150px;
+  }

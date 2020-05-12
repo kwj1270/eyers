@@ -40,7 +40,7 @@ var fbcomment = {
         $('#btn-updateForm').text("취소");
         $('#btn-updateForm').on('click', function(){
             _this.commentList();
-        });
+        })
         var a ='';
         a += '<div class="input-group">';
         a += '<input type="hidden" class="form-control" id="update_fbcommentSeq" value="'+fbcommentSeq+'"/>';
