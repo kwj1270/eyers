@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="member/css/member.css">
+    <title>EYERS</title>
+    <style>
+        .memberimg {
+            width: auto;
+            height: auto;
+            max-width: 206px;
+            max-height: 286px;
+        }
+
+        footer {
+            width: 100%;
+            height: 200px;
+            background-color: #181818;
+            color: white;
+            font-size: 15px;
+            text-align: center;
+            line-height: 30px;
+        }
+
+
+    .jj_table {
+    width: 100%;
+    font-size: 15px;
+    table-layout: fixed;
+    border-collapse: separate;
+    border-top: 2px solid #47a8de;
+    border-left: 0px;
+    line-height: 160%;
+}
+.jj_table thead th, .jj_table th {
+    padding: 6px 8px;
+    border-bottom: 1px solid #c9c9c9;
+    background-color: #f7f7f7;
+    font-weight: normal;
+    border-right: 1px solid #c9c9c9;
+    color: #333;
+    text-align: center;
+}
+.jj_table tbody td {
+    border-bottom: 1px solid #c9c9c9;
+    padding: 6px 8px;
+    text-align: center;
+    border-right: 1px solid #c9c9c9;
+    background-color: #fff;
+}
+    </style>
+</head>
+
+<body>
+<div class="container">
+    <h4 class="con_tit">
+        아이어즈 회원님들을 소개합니다. <span style="float:right;color:#444;font-size:15px">※ 출처: 아이어즈 DB</span>
+    </h4>
+    <!--  ㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇ -->
+    <header>
+        <nav class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top">
+            <!-- 메뉴의 홈페이지 이름 -->
+            <a class="navbar-brand" href="main">EYERS</a>
+            <!-- 모바일때 표시되는 메뉴 버튼(PC 버젼에서는 보이지 않는다.)  -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <!-- Home 메뉴 -->
+                    <li class="nav-item ">
+                        <a class="nav-link" href="main">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="notice">공지사항</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="member">역대 회원 정보</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="freeboard">자유게시판</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="faq">FAQ</a>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav ml-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                           data-toggle="dropdown"
+                           aria-haspopup="true" aria-expanded="false">
+                            회원관리
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+                            <li><a class="dropdown-item" href="logout">로그아웃</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+</div>
+
+<!--  ㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇ -->
+<div class="container">
+    <div class="container-fulid" style="margin-top: 80px;">
+        <table class="jj_table el" cellspacing="0" summary="">
+            <caption></caption>
+            <colgroup>
+                <col width="20%" class="w">
+                <col width="15%">
+                <col width="25%">
+                <col width="15%">
+                <col width="25%">
+            </colgroup>
+            <tbody>
+            <tr>
+                <td rowspan="4" class="w" style="padding:10px">
+                    <p class="">
+                        <img alt="" src="../member/images/kimwoojae.jpeg" class="memberimg">
+                    </p>
+                </td>
+                <th scope="col" colspan="4"><strong>김우재 (201512014 - 학번)</strong></th>
+            </tr>
+            <tr>
+                <th scope="row">전공</th>
+                <td>문화융합대학 스마트미디어학과</td>
+                <th scope="row">기술 분야</th>
+                <td class="l"> C 언어 / C++ / JAVA / HTM & CSS / JAVASCRIPT / PYTHON / JSP / Spring
+                    FrameWork with Mybatis/ Spring boot with JPA / AWS / MUSTACHE / THYMLEAF / 알고리즘</td>
+            </tr>
+            <tr>
+                <th scope="row">홈페이지</th>
+                <td><a href="https://github.com/kwj1270" target="_blank">https://github.com/kwj1270</a>
+                </td>
+                <th scope="row">이메일</th>
+                <td><a href="mailto:kwj1270@naver.com" target="_blank">kwj1270@naver.com</a></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <!--  ㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇ -->
+    <div class="container-fulid" style="margin-top: 80px;">
+        <table  class="jj_table el" cellspacing="0" summary="">
+            <caption></caption>
+            <colgroup>
+                <col width="20%" class="w">
+                <col width="15%">
+                <col width="25%">
+                <col width="15%">
+                <col width="25%">
+            </colgroup>
+            <tbody>
+            <tr>
+                <td rowspan="4" class="w" style="padding:10px">
+                    <p class="">
+                        <img alt="" src="../member/images/leegwangheong.jpeg" class="memberimg">
+                    </p>
+                </td>
+                <th scope="col" colspan="4"><strong>이광형 (201562042 - 학번)</strong></th>
+            </tr>
+            <tr>
+                <th scope="row">전공</th>
+                <td>문화융합대학 스마트미디어학과</td>
+                <th scope="row">기술 분야</th>
+                <td class="l"> C 언어 / C++ / JAVA / HTM & CSS / JAVASCRIPT / PYTHON / JSP / Spring
+                    FrameWork with Mybatis/ Spring boot with JPA / AWS / MUSTACHE / THYMLEAF / 알고리즘</td>
+            </tr>
+            <tr>
+                <th scope="row">홈페이지</th>
+                <td><a href="https://github.com/GwangHyeong" target="_blank">https://github.com/GwangHyeong</a>
+                </td>
+                <th scope="row">이메일</th>
+                <td><a href="mailto:rhkdgud61@naver.com" target="_blank">rhkdgud61@naver.com</a></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <!--  ㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇ -->
+    <div class="container-fulid" style="margin-top: 80px;">
+        <table  class="jj_table el" cellspacing="0" summary="">
+            <caption></caption>
+            <colgroup>
+                <col width="20%" class="w">
+                <col width="15%">
+                <col width="25%">
+                <col width="15%">
+                <col width="25%">
+            </colgroup>
+            <tbody>
+            <tr>
+                <td rowspan="4" class="w" style="padding:10px">
+                    <p class="">
+                        <img alt="" src="../member/images/songsuhyeon.jpeg" class="memberimg">
+                    </p>
+                </td>
+                <th scope="col" colspan="4"><strong>송수현 (201762011 - 학번)</strong></th>
+            </tr>
+            <tr>
+                <th scope="row">전공</th>
+                <td>문화융합대학 스마트미디어학과</td>
+                <th scope="row">기술 분야</th>
+                <td class="l"> C 언어 / C++ / JAVA / HTM & CSS / JAVASCRIPT / PYTHON / JSP / Spring
+                    FrameWork with Mybatis/ Spring boot with JPA / AWS / MUSTACHE / THYMLEAF / 알고리즘</td>
+            </tr>
+            <tr>
+                <th scope="row">홈페이지</th>
+                <td><a href="#" target="_blank">#</a>
+                </td>
+                <th scope="row">이메일</th>
+                <td><a href="mailto:tngus3347@naver.com" target="_blank">tngus3347@naver.com</a></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <!--  ㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇ -->
+    <div class="container-fulid" style="margin-top: 80px;">
+        <table  class="jj_table el" cellspacing="0" summary="">
+            <caption></caption>
+            <colgroup>
+                <col width="20%" class="w">
+                <col width="15%">
+                <col width="25%">
+                <col width="15%">
+                <col width="25%">
+            </colgroup>
+            <tbody>
+            <tr>
+                <td rowspan="4" class="w" style="padding:10px">
+                    <p class="">
+                        <img alt="" src="../member/images/leedayeon.jpeg" class="memberimg">
+                    </p>
+                </td>
+                <th scope="col" colspan="4"><strong>이다연 (201762041 - 학번)</strong></th>
+            </tr>
+            <tr>
+                <th scope="row">전공</th>
+                <td>문화융합대학 스마트미디어학과</td>
+                <th scope="row">기술 분야</th>
+                <td class="l"> C 언어 / C++ / JAVA / HTM & CSS / JAVASCRIPT / PYTHON / JSP / Spring
+                    FrameWork with Mybatis/ Spring boot with JPA / AWS / MUSTACHE / THYMLEAF / 알고리즘</td>
+            </tr>
+            <tr>
+                <th scope="row">홈페이지</th>
+                <td><a href="#" target="_blank">#</a>
+                </td>
+                <th scope="row">이메일</th>
+                <td><a href="mailto:dokr1125@naver.com" target="_blank">dokr1125@naver.com</a></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <!--  ㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇ -->
+    <div class="container-fulid" style="margin-top: 80px;">
+        <table class="jj_table el" cellspacing="0" summary="">
+            <caption></caption>
+            <colgroup>
+                <col width="20%" class="w">
+                <col width="15%">
+                <col width="25%">
+                <col width="15%">
+                <col width="25%">
+            </colgroup>
+            <tbody>
+            <tr>
+                <td rowspan="4" class="w" style="padding:10px">
+                    <p class="">
+                        <img alt="" src="../member/images/jinuijeong.jpeg" class="memberimg">
+                    </p>
+                </td>
+                <th scope="col" colspan="4"><strong>진의정 ( 201962051 - 학번 )</strong></th>
+            </tr>
+            <tr>
+                <th scope="row">전공</th>
+                <td>문화융합대학 스마트미디어학과</td>
+                <th scope="row">기술 분야</th>
+                <td class="l"> C 언어 / C++ / JAVA / HTM & CSS / JAVASCRIPT / PYTHON / JSP / Spring
+                    FrameWork with Mybatis/ Spring boot with JPA / AWS / MUSTACHE / THYMLEAF / 알고리즘</td>
+            </tr>
+            <tr>
+                <th scope="row">홈페이지</th>
+                <td>
+                    <a href="https://www.instagram.com/invites/contact/?i=am99q3udm9gq&utm_content=2g6lxqr"
+                       target="_blank">
+                        https://www.instagram.com/invites/contact/?i=am99q3udm9gq&utm_content=2g6lxqr
+                    </a>
+                </td>
+                <th scope="row">이메일</th>
+                <td><a href="wlsdmlwjd95@naver.com" target="_blank">wlsdmlwjd95@naver.com</a></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<!--  ㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇ -->
+<footer class="container-fulid" style="padding-top: 30px;">
+    <address>(55069) 전라북도 전주시 완산구 천잠로 303, 424호</address>
+    <p>관리자: 김우재 | TEL: 010-2046-1270</p>
+    <p class="copy">Copyrights (C)2020 SMARTMEDIA EYERS. ALL RIGHTS RESERVED.</p>
+</footer>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>

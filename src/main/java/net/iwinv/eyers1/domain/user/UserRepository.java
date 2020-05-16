@@ -33,4 +33,5 @@ public interface UserRepository extends JpaRepository<User, Long> { // 별거 �
     @Query("SELECT userPw FROM User u WHERE u.userId = :userId AND u.userName = :userName AND u.userStudentnumber = :userStudentnumber")
     String findPassword(@Param("userId")String userId, @Param("userName") String userName, @Param("userStudentnumber") String userStudentnumber);
 
+
 }
