@@ -32,10 +32,10 @@
                         <a class="nav-link" href="#">족보</a>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link" href="freeboard">자유게시판</a>
+                        <a class="nav-link" href="egoexam">자유게시판</a>
                     </li>
-                    <li class="nav-item ">
-                        <a class="nav-link" href="faq">FAQ</a>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">QnA</a>
                     </li>
                 </ul>
 
@@ -69,45 +69,45 @@
         </tr>
         </thead>
         <tbody>
-        <tr th:each="freeboard: ${freeboards}">
-            <td th:text="${freeboard.freeboardSeq}"></td>
-            <td><a th:href="@{/freeboard/{seq}(seq = ${freeboard.freeboardSeq})}"
-                   th:text="${freeboard.freeboardTitle}"></a></td>
-            <td th:text="${freeboard.freeboardName}"></td>
-            <td th:text="${freeboard.freeboardDate}"></td>
+        <tr th:each="egoexam: ${egoexams}">
+            <td th:text="${egoexam.egoexamSeq}"></td>
+            <td><a th:href="@{/egoexam/{seq}(seq = ${egoexam.egoexamSeq})}"
+                   th:text="${egoexam.egoexamTitle}"></a></td>
+            <td th:text="${egoexam.egoexamName}"></td>
+            <td th:text="${egoexam.egoexamDate}"></td>
         </tr>
         </tbody>
     </table>
-    <button type="button" class="btn btn-default float-right" id="btn-freeboard-write">글쓰기</button>
+    <button type="button" class="btn btn-default float-right" id="btn-egoexam-write">글쓰기</button>
     <nav style="text-align: center;">
         <ul class="pagination"
-            th:with="start=${T(Math).floor(freeboards.number/10)*10 + 1},
-                    last=(${start + 9 < freeboards.totalPages ? start + 9 : freeboards.totalPages}),
+            th:with="start=${T(Math).floor(egoexams.number/10)*10 + 1},
+                    last=(${start + 9 < egoexams.totalPages ? start + 9 : egoexams.totalPages}),
                     last=(${last < 1 ? 1 : last})">
             <li>
-                <a class="page-link" th:href="@{/freeboard(page=1)}" aria-label="First">
+                <a class="page-link" th:href="@{/egoexam(page=1)}" aria-label="First">
                     <span aria-hidden="true">First</span>
                 </a>
             </li>
-            <li class="page-item" th:class="${freeboards.first} ? 'disabled'">
-                <a class="page-link" th:href="${freeboards.first} ? '#' :@{/freeboard(page=${freeboards.number})}"
+            <li class="page-item" th:class="${egoexams.first} ? 'disabled'">
+                <a class="page-link" th:href="${egoexams.first} ? '#' :@{/egoexam(page=${egoexams.number})}"
                    aria-label="Previous">
                     <span aria-hidden="true">&lt;</span>
                 </a>
             </li>
             <li class="page-item" th:each="page: ${#numbers.sequence(start, last)}"
-                th:class="${page == freeboards.number + 1} ? 'page-item active'">
-                <a class="page-link" th:text="${page}" th:href="@{/freeboard(page=${page})}"></a>
+                th:class="${page == egoexams.number + 1} ? 'page-item active'">
+                <a class="page-link" th:text="${page}" th:href="@{/egoexam(page=${page})}"></a>
             </li>
-            <li class="page-item" th:class="${freeboards.last} ? 'disabled'">
+            <li class="page-item" th:class="${egoexams.last} ? 'disabled'">
                 <a class="page-link"
-                   th:href="${freeboards.last} ? '#' : @{/freeboard(page=${freeboards.number + 2})}"
+                   th:href="${egoexams.last} ? '#' : @{/egoexam(page=${egoexams.number + 2})}"
                    aria-label="Next">
                     <span aria-hidden="true">&gt;</span>
                 </a>
             </li>
             <li>
-                <a class="page-link" th:href="@{/freeboard(page=${freeboards.totalPages})}" aria-label="Last">
+                <a class="page-link" th:href="@{/egoexam(page=${egoexams.totalPages})}" aria-label="Last">
                     <span aria-hidden="true">Last</span>
                 </a>
             </li>
@@ -123,6 +123,6 @@
 </footer>
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-<script src="freeboards/js/freeboard.js"></script>
+<script src="egoexams/js/egoexam.js"></script>
 </body>
 </html>

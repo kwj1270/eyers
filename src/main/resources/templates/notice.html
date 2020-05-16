@@ -35,13 +35,14 @@
                         <a class="nav-link" href="freeboard">자유게시판</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">QnA</a>
+                        <a class="nav-link" href="faq">FAQ</a>
                     </li>
                 </ul>
 
                 <ul class="nav navbar-nav ml-auto">
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                           data-toggle="dropdown"
                            aria-haspopup="true" aria-expanded="false">
                             회원관리
                         </a>
@@ -52,7 +53,10 @@
                 </ul>
             </div>
         </nav>
-        <div class="jumbotron">
+    </header>
+</div>
+<div class="container" style="margin-top:80px">
+<div class="jumbotron">
     <h2>공지 사항</h2>
 </div>
 <table class="table table-horizontal table-bordered">
@@ -67,12 +71,13 @@
     <tbody>
     <tr th:each="notice: ${notices}">
         <td th:text="${notice.noticeSeq}"></td>
-        <td><a th:href="@{/notice/{seq}(seq = ${notice.noticeSeq})}"  th:text="${notice.noticeTitle}"></a></td>
+        <td><a th:href="@{/notice/{seq}(seq = ${notice.noticeSeq})}" th:text="${notice.noticeTitle}"></a></td>
         <td th:text="${notice.noticeName}"></td>
         <td th:text="${notice.noticeDate}"></td>
     </tr>
     </tbody>
 </table>
+<button type="button" class="btn btn-default float-right" id="btn-notice-write">글쓰기</button>
 <nav style="text-align: center;">
     <ul class="pagination"
         th:with="start=${T(Math).floor(notices.number/10)*10 + 1},
@@ -84,26 +89,38 @@
             </a>
         </li>
         <li class="page-item" th:class="${notices.first} ? 'disabled'">
-            <a class="page-link" th:href="${notices.first} ? '#' :@{/notice(page=${notices.number})}" aria-label="Previous">
+            <a class="page-link" th:href="${notices.first} ? '#' :@{/notice(page=${notices.number})}"
+               aria-label="Previous">
                 <span aria-hidden="true">&lt;</span>
             </a>
         </li>
-        <li class="page-item" th:each="page: ${#numbers.sequence(start, last)}" th:class="${page == notices.number + 1} ? 'page-item active'">
+        <li class="page-item" th:each="page: ${#numbers.sequence(start, last)}"
+            th:class="${page == notices.number + 1} ? 'page-item active'">
             <a class="page-link" th:text="${page}" th:href="@{/notice(page=${page})}"></a>
         </li>
         <li class="page-item" th:class="${notices.last} ? 'disabled'">
-            <a class="page-link" th:href="${notices.last} ? '#' : @{/notice(page=${notices.number + 2})}" aria-label="Next">
+            <a class="page-link" th:href="${notices.last} ? '#' : @{/notice(page=${notices.number + 2})}"
+               aria-label="Next">
                 <span aria-hidden="true">&gt;</span>
             </a>
         </li>
-        <li >
+        <li>
             <a class="page-link" th:href="@{/notice(page=${notices.totalPages})}" aria-label="Last">
                 <span aria-hidden="true">Last</span>
             </a>
         </li>
     </ul>
 </nav>
+</div>
+<footer>
+    <div class="container" style="margin-top: 20px">
+        <address>(55069) 전라북도 전주시 완산구 천잠로 303, 424호</address>
+        <p>관리자: 김우재 | TEL: 010-2046-1270</p>
+        <p class="copy">Copyrights (C)2020 SMARTMEDIA EYERS. ALL RIGHTS RESERVED.</p>
+    </div>
+</footer>
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script src="notices/js/notice.js"></script>
 </body>
 </html>

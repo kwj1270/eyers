@@ -30,6 +30,14 @@ public class NoticeController {
             return "redirect:login";
         }
     }
+    @RequestMapping("/notice/write")
+    public String toWriteNotice(@LoginUser SessionUser user) {
+        if (user != null) {
+            return "notice-write";
+        } else {
+            return "redirect:../login";
+        }
+    }
 
     @RequestMapping("/notice/{noticeSeq}")
     public String toDetailNotice(@PathVariable Long noticeSeq,Model model, @LoginUser SessionUser user) {

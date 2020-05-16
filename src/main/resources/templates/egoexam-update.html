@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <title>EYERS</title>
+</head>
+<body>
+<h2>자유 게시판 수정</h2>
+<div class="col-md-12">
+    <div class="col-md-4">
+        <form>
+            <input type="hidden" id="egoexamDate" th:value="${egoexam.egoexamDate}" readonly>
+            <div class="form-group">
+                <label for="egoexamSeq">글 번</label>
+                <input type="text" class="form-control" id="egoexamSeq" th:value="${egoexam.egoexamSeq}" readonly>
+            </div>
+            <div class="form-group">
+                <label for="egoexamTitle">제목</label>
+                <input type="text" class="form-control" id="egoexamTitle" th:value="${egoexam.egoexamTitle}">
+            </div>
+            <div class="form-group">
+                <label for="egoexamName"> 작성자</label>
+                <input type="text" class="form-control" id="egoexamName" th:value="${egoexam.egoexamName}" readonly>
+            </div>
+            <div class="form-group">
+                <label for="egoexamContent"> 내용</label>
+                <textarea class="form-control" id="egoexamContent" th:text="${egoexam.egoexamContent}"></textarea>
+            </div>
+        </form>
+        <form id="egoexamForm">
+            <div class="form-group">
+                <input type="text" id="previousSeq" th:vale="${fileSeq}">
+                <label for="egoexamFile">파일</label><br>
+                <input type="file" id="egoexamFile" name="file" size="50">
+            </div>
+        </form>
+        <button type="button" class="btn btn-primary" id="btn-update">수정</button>
+        <button type="button" class="btn btn-danger" id="btn-delete">삭제</button>
+        <button type="button" class="btn btn-secondary" id="btn-list">목록</button>
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script src="../../egoexams/js/egoexam-update.js"></script>
+</body>
+</html>

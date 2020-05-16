@@ -7,7 +7,8 @@ function CheckForm(){
         window.alert("처음 휴대폰 번호를 선택하시오.");
         return false;
     }
-    if(phone_middle.value.length <3 || phone_middle.value.length>4 ){ //3자리 또는 4자리가 아니면 
+
+    if(phone_middle.value.length < 3 || phone_middle.value.length>4 ){ //3자리 또는 4자리가 아니면
         window.alert("가운데 자리 번호는 3~4자리로 입력하시오.");
         phone_middle.value="";//입력된값을 지움.
         phone_middle.focus(); //마지막 번호로 포커스 이동.

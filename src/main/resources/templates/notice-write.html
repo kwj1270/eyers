@@ -14,16 +14,16 @@
     <div class="col-md-4">
         <form>
             <div class="form-group">
-                <label for="freeboardTitle">제목</label>
-                <input type="text" class="form-control" id="freeboardTitle">
+                <label for="noticeTitle">제목</label>
+                <input type="text" class="form-control" id="noticeTitle">
             </div>
             <div class="form-group">
-                <label for="freeboardName"> 작성자</label>
-                <input type="text" class="form-control" id="freeboardName" th:value="${session.user.userId}" readonly>
+                <label for="noticeName"> 작성자</label>
+                <input type="text" class="form-control" id="noticeName" th:value="${session.user.userId}" readonly>
             </div>
             <div class="form-group">
-                <label for="freeboardContent">내용</label>
-                <textarea class="form-control" id="freeboardContent"></textarea>
+                <label for="noticeContent">내용</label>
+                <textarea class="form-control" id="noticeContent"></textarea>
             </div>
         </form>
         <button type="button" class="btn btn-primary" id="btn-save">등록</button>
@@ -32,6 +32,6 @@
 </div>
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-<script src="../../freeboards/js/freeboard-write.js"></script>
+<script src="../../notices/js/notice-write.js"></script>
 </body>
 </html>

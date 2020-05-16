@@ -1,0 +1,38 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Spring MVC - Hibernate File Upload to Database Demo</title>
+</head>
+<body>
+<div align="center">
+    <h1>Spring MVC - Hibernate File Upload to Database Demo</h1>
+    <form method="post" action="/upload/file" enctype="multipart/form-data">
+        <div class="form-group">
+            <label for="egoexamTitle">제목</label>
+            <input type="text" class="form-control" id="egoexamTitle">
+        </div>
+        <div class="form-group">
+            <label for="egoexamName"> 작성자</label>
+            <input type="text" class="form-control" id="egoexamName">
+        </div>
+        <div class="form-group">
+            <label for="egoexamContent">내용</label>
+            <textarea class="form-control" id="egoexamDate"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="egoexamContent">내용</label>
+            <textarea class="form-control" id="egoexamContent"></textarea>
+        </div>
+        <table border="0">
+            <tr>
+                <td>Pick file #1:</td>
+                <td><input type="file" name="file" size="50" /></td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center"><input type="submit" value="Upload" /></td>
+            </tr>
+        </table>
+    </form>
+</div>
+</body>
+</html>
