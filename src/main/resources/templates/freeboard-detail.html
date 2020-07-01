@@ -22,7 +22,7 @@
             <div class="board_content" th:text="${freeboard.freeboardContent}"></div>
         </div>
         <div style="margin-top : 20px">
-            <button type="button" class="btn btn-primary" id="btn-update">수정</button>
+            <button th:if="${freeboard.freeboardName} == ${session.user.userId}" type="button" class="btn btn-primary" id="btn-update">수정</button>
             <button type="button" class="btn btn-secondary" id="btn-list">목록</button>
         </div>
     </div>

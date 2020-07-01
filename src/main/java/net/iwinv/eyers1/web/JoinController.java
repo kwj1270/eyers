@@ -6,6 +6,7 @@ import net.iwinv.eyers1.config.dto.SessionUser;
 import net.iwinv.eyers1.domain.user.Role;
 import net.iwinv.eyers1.service.user.UserService;
 import net.iwinv.eyers1.web.dto.UserSaveRequestDto;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,6 +21,7 @@ public class JoinController {
 
     private final UserService userService; // @RequiredArgsConstructor final 의존성 주입 시켜준다.
     private final HttpSession httpSession; // Session을 의미 어플리케이션 전체에서 사용될 객체를 저장한다.
+    private final BCryptPasswordEncoder passwordEncoder;
 
     @GetMapping("/join") // get 방식으로 접근시 페이지 이동 처리
     public String toJoin(Model model, @LoginUser SessionUser user){
@@ -41,6 +43,7 @@ public class JoinController {
         } else{
             return "join";
         }
+        requestDto.setUserPw(passwordEncoder.encode(requestDto.getUserPw()));
         SessionUser user =  new SessionUser(userService.join(requestDto)); // 로그인 성공시 user 정보 가져옴
         httpSession.setAttribute("user", user); // 받아온 user 정보를 session 에 저장
         return "redirect:main";

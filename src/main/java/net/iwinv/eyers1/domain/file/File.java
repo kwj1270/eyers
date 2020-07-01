@@ -21,10 +21,10 @@ public class File {
     @Column(nullable = false) // SQL == ....not null unique
     private String fileName;
 
-    /*
+
     @Column(nullable = false) // SQL == ....not null unique
     private String fileUrl;
-*/
+
     @Lob
     @Column(length=1024000)
     private byte[] fileData;

@@ -10,7 +10,7 @@ import javax.persistence.*;
 @NoArgsConstructor // 생성자 의존성 주입
 @Entity // DB 테이블로 사용되는 객체임을 나타낸다.
 //public class User extends BaseTimeEntity {
-public class User{
+public class  User{
 
     @Id // DB에서 PK임을 지정
     @GeneratedValue(strategy = GenerationType.IDENTITY) // PK가 INT 형이며 AUTO_INCREMENT 지원

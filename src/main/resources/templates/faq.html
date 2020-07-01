@@ -9,8 +9,26 @@
     <link rel="stylesheet" href="faq/css/faq.css">
 
     <style>
-        body {
-            background-color: #AAB9FF;
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body{
+            background-color: #d3d3d3;
+            font-family: 'Raleway', sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            color: #777;
+        }
+        footer {
+            width: 100%;
+            height: 200px;
+            background-color: #181818;
+            color: white;
+            font-size: 15px;
+            text-align: center;
+            line-height: 30px;
         }
 </style>
 </head>
@@ -61,17 +79,18 @@
         </nav>
     </header>
     <h2 style="padding-top:80px">FAQ</h2>
-    <p><strong>Note:</strong> The <strong>data-parent</strong> attribute makes sure that all collapsible elements under the specified parent will be closed when one of the collapsible item is shown.</p>
+    <p><strong>Note:</strong> 자주 묻는 질문들을 모아놓은 페이지입니다.</p>
     <div id="accordion">
         <div class="card">
             <div class="card-header">
                 <a class="card-link" data-toggle="collapse" href="#collapseOne">
-                    Collapsible Group Item #1
+                    페이지 관리는 누가 하나요?
                 </a>
             </div>
             <div id="collapseOne" class="collapse show" data-parent="#accordion">
                 <div class="card-body">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    페이지 관리는 대체적으로 동아리 회장이 관리를 합니다. <br>
+                    2021년부터 19학번 진의정 학우님이 맡으십니다. :-)
                 </div>
             </div>
         </div>
@@ -79,12 +98,12 @@
         <div class="card">
             <div class="card-header">
                 <a class="collapsed card-link" data-toggle="collapse" href="#collapseTwo">
-                    Collapsible Group Item #2
+                    페이지 소스 코드를 수정해도 되나요?
                 </a>
             </div>
             <div id="collapseTwo" class="collapse" data-parent="#accordion">
                 <div class="card-body">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    저작권을 등록한 애플리케이션이 아니고 회원분들이 추후 업데이트를 하는 것이 목적이기 적극적으로 지향합니다. :-)
                 </div>
             </div>
         </div>
@@ -92,12 +111,14 @@
         <div class="card">
             <div class="card-header">
                 <a class="collapsed card-link" data-toggle="collapse" href="#collapseThree">
-                    Collapsible Group Item #3
+                    이 사이트를 처음 개발하신 분은 누구시죠?
                 </a>
             </div>
             <div id="collapseThree" class="collapse" data-parent="#accordion">
                 <div class="card-body">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    스마트미디어학과 15학번 김우재 학생입니다. <br>
+                    핸드폰 번호 : 010-2046-1270
+                    이메일 : kwj1270@naver.com
                 </div>
             </div>
         </div>
@@ -105,12 +126,12 @@
         <div class="card">
             <div class="card-header">
                 <a class="collapsed card-link" data-toggle="collapse" href="#collapseFour">
-                    Collapsible Group Item #4
+                    사이트의 목적은 무엇인가요?
                 </a>
             </div>
             <div id="collapseFour" class="collapse" data-parent="#accordion">
                 <div class="card-body">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    동아리 사이트를 통해 학과 선후배는 물론 졸업 선배님들과의 커뮤니케이션을 위해 개발했습니다.
                 </div>
             </div>
         </div>
@@ -118,12 +139,12 @@
         <div class="card">
             <div class="card-header">
                 <a class="collapsed card-link" data-toggle="collapse" href="#collapseFive">
-                    Collapsible Group Item #5
+                    게시글 작성시 주의 해야할 점이 있나요?
                 </a>
             </div>
             <div id="collapseFive" class="collapse" data-parent="#accordion">
                 <div class="card-body">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    아무래도 공적인 공간이고 선배님들도 계시니 격식을 차리면 좋겠습니다.
                 </div>
             </div>
         </div>
@@ -131,12 +152,12 @@
         <div class="card">
             <div class="card-header">
                 <a class="collapsed card-link" data-toggle="collapse" href="#collapseSix">
-                    Collapsible Group Item #6
+                    회원정보를 수정하고 싶은데 어떻게 하나요?
                 </a>
             </div>
             <div id="collapseSix" class="collapse" data-parent="#accordion">
                 <div class="card-body">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    사이트 관리를 하는 동아리 회장님께 말씀드리시고 절차를 통해 하시면 될 것 같습니다.
                 </div>
             </div>
         </div>
@@ -144,12 +165,12 @@
         <div class="card">
             <div class="card-header">
                 <a class="collapsed card-link" data-toggle="collapse" href="#collapseSeven">
-                    Collapsible Group Item #7
+                    비밀번호를 잊어 버렸어요
                 </a>
             </div>
             <div id="collapseSeven" class="collapse" data-parent="#accordion">
                 <div class="card-body">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    로그인 창 밑에 아이디와 비밀 번호를 찾는 기능이 있습니
                 </div>
             </div>
         </div>
@@ -157,12 +178,12 @@
         <div class="card">
             <div class="card-header">
                 <a class="collapsed card-link" data-toggle="collapse" href="#collapseEight">
-                    Collapsible Group Item #8
+                    로그인 없이 사이트를 이용할 수 있나요?
                 </a>
             </div>
             <div id="collapseEight" class="collapse" data-parent="#accordion">
                 <div class="card-body">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    기본적으로 로그인을 하고 들어올 수 있게 만들었습니다.
                 </div>
             </div>
         </div>
@@ -170,12 +191,12 @@
         <div class="card">
             <div class="card-header">
                 <a class="collapsed card-link" data-toggle="collapse" href="#collapseNine">
-                    Collapsible Group Item #9
+                    안드로이드 어플과 연동 되나요?
                 </a>
             </div>
             <div id="collapseNine" class="collapse" data-parent="#accordion">
                 <div class="card-body">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    동일한 데이터베이스를 사용하기에 연동이됩니다.
                 </div>
             </div>
         </div>
@@ -183,12 +204,12 @@
         <div class="card">
             <div class="card-header">
                 <a class="collapsed card-link" data-toggle="collapse" href="#collapseTen">
-                    Collapsible Group Item #10
+                    안드로이드 어플리케이션의 차이가나는 기능이 있나요?
                 </a>
             </div>
             <div id="collapseTen" class="collapse" data-parent="#accordion">
                 <div class="card-body">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    없습니다.
                 </div>
             </div>
         </div>

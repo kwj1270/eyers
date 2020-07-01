@@ -10,8 +10,8 @@ public interface UserRepository extends JpaRepository<User, Long> { // 별거 �
         // DAO의 CRUD 기능을 알아서 만들어 준다.
     */
     // CRUD 외의 쿼리를 만들고 싶을때 사용
-    @Query("SELECT u FROM User u WHERE u.userId = :userId AND u.userPw = :userPw")
-    User login(@Param("userId") String userId, @Param("userPw") String userPw);
+    @Query("SELECT u FROM User u WHERE u.userId = :userId")
+    User login(@Param("userId") String userId);
     // @Param으로 써져있으면 해당 값을 쿼리 문자열에 할당함
     // 즉, @Param("userId") String userId 의 값이 kwj1270일 경우
     // @Query("SELECT u FROM User u WHERE u.userId = kwj1270 AND u.userPw = :userPw")

@@ -94,7 +94,7 @@ public class UserService {
 
     @Transactional  // 아이디 패스워드 일치하면 유저정보 가져오기
     public User login(UserLoginRequestDto requestDto) {
-        return userRepository.login(requestDto.getUserId(), requestDto.getUserPw());
+        return userRepository.login(requestDto.getUserId());
     }
 
 }

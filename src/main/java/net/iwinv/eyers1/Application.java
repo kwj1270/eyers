@@ -22,20 +22,20 @@ public class Application{
     @Bean
     public CommandLineRunner initData(NoticeRepository noticeRepository, FreeboardRepository freeboardRepository){
         return args -> IntStream.rangeClosed(1,52).forEach(i -> {
-/*
+
             NoticeVO notice = NoticeVO.builder()
                     .noticeTitle("test" + i)
                     .noticeContent("test" + i)
                     .noticeName("test" + i)
-                    .noticeDate("123")
+                    .noticeDate("2020. 6. 27. 오후 2:07:"+i)
                     .build();
             noticeRepository.save(notice);
-*/
+
             Freeboard board = Freeboard.builder()
                     .freeboardTitle("test" + i)
                     .freeboardContent("test" + i)
                     .freeboardName("test"+i)
-                    .freeboardDate("123")
+                    .freeboardDate("2020. 6. 27. 오후 2:07:"+i)
                     .build();
             freeboardRepository.save(board);
         });

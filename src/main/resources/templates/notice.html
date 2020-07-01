@@ -78,7 +78,7 @@
     </tr>
     </tbody>
 </table>
-<button type="button" class="btn btn-default float-right" id="btn-notice-write">글쓰기</button>
+<button th:if="${session.user.checkAdmin()}" type="button" class="btn btn-default float-right" id="btn-notice-write">글쓰기</button>
 <nav style="text-align: center;">
     <ul class="pagination"
         th:with="start=${T(Math).floor(notices.number/10)*10 + 1},

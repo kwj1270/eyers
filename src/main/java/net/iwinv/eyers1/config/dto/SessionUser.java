@@ -21,5 +21,12 @@ public class SessionUser implements Serializable {
             this.userNickname = user.getUserNickname();
             this.userRole = user.getUserRole();
     }
+
+    public boolean checkAdmin(){
+        return userRole.getKey().equals("ADMIN");
+    }
+    public boolean checkWriter(String writer){
+        return userId.equals(writer);
+    }
     // User 객체에서 필요한 정보만 받아서 저장하기 위한 것
 }
