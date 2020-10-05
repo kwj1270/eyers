@@ -13,7 +13,7 @@ import javax.persistence.*;
 @NoArgsConstructor
 @Table(name = "USER")
 @Entity
-public class User extends BaseTimeEntity {
+public class User extends BaseTimeEntity { //implements Serializable
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -60,6 +60,11 @@ public class User extends BaseTimeEntity {
         this.nickName = nickName;
     }
 
+    public User encodingPassword(){
+        password = "{noop}"+ password;
+        return this;
+    }
+
     public User setInactive() {
         status = UserStatus.INACTIVE;
         return this;
@@ -73,6 +78,5 @@ public class User extends BaseTimeEntity {
     public String getRoleKey(){
         return this.role.getKey();
     }
-
 
 }

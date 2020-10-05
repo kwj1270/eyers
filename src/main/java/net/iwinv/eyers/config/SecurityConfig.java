@@ -39,12 +39,14 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
         http
                 .addFilterBefore(filter, CsrfFilter.class).csrf().disable().headers().frameOptions().disable();
-
+/*
         http    .authorizeRequests()
-                .antMatchers("/", "/login/**", "/join/**").permitAll()
-                .antMatchers("/api/v1/**").hasRole(Role.USER.name())
-                .antMatchers("/admin/**","/h2-console/**").hasRole(Role.ADMIN.name())
+                .antMatchers("/","/h2-console/**","/auth/**","/login/**", "/join/**").permitAll()
+                .antMatchers("/api/v1/**", "/main/**").hasRole(Role.USER.name())
+                .antMatchers("/admin/**").hasRole(Role.ADMIN.name()) // h2-console 바꾸기
                 .anyRequest().authenticated();
+*/
+        http    .authorizeRequests().antMatchers("/**").permitAll();
 
         http
                 .exceptionHandling() // 예외사항을 설정

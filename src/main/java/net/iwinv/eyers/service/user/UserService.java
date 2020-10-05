@@ -2,12 +2,16 @@ package net.iwinv.eyers.service.user;
 
 import lombok.RequiredArgsConstructor;
 import net.iwinv.eyers.config.dto.SessionUser;
+import net.iwinv.eyers.domain.user.security.CustomUserDetail;
 import net.iwinv.eyers.domain.user.User;
 import net.iwinv.eyers.domain.user.UserRepository;
 import net.iwinv.eyers.dto.user.UserListResponseDto;
 import net.iwinv.eyers.dto.user.UserResponseDto;
 import net.iwinv.eyers.dto.user.UserSaveRequestDto;
 import net.iwinv.eyers.dto.user.UserUpdateRequestDto;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -17,7 +21,7 @@ import java.util.stream.Collectors;
 
 @RequiredArgsConstructor
 @Service
-public class UserService {
+public class UserService implements UserDetailsService {
     private final UserRepository userRepository;
     private final HttpSession httpSession;
 
@@ -53,14 +57,6 @@ public class UserService {
         return userRepository.findAll().stream().map(UserListResponseDto::new).collect(Collectors.toList());
     }
 
-    @Transactional
-    public Long login(String userId, String password){
-        User user = userRepository.findByUserIdAndPassword(userId, password).orElseThrow(() -> new
-                IllegalArgumentException("해당 아이디 또는 비밀번호가 존재하지 않습니다."));
-        httpSession.setAttribute("user", new SessionUser(user));
-        return user.getId();
-    }
-
     @Transactional(readOnly = true)
     public boolean findByUserId(String userId) {
         return userRepository.findByUserId(userId).isPresent();
@@ -76,5 +72,18 @@ public class UserService {
         return userRepository.findByNickName(nickName).isPresent();
     }
 
+    @Transactional
+    public Long login(String userId, String password){
+        User user = userRepository.findByUserIdAndPassword(userId, password).orElseThrow(() -> new
+                IllegalArgumentException("해당 아이디 또는 비밀번호가 존재하지 않습니다."));
+        httpSession.setAttribute("user", new SessionUser(user));
+        return user.getId();
+    }
 
+    @Override
+    public UserDetails loadUserByUsername(String userId) throws UsernameNotFoundException {
+        User user = userRepository.findByUserId(userId).orElseThrow(() ->
+            new UsernameNotFoundException("해당 아이디는 존재하지 않습니다."));
+        return new CustomUserDetail(user);
+    }
 }
