@@ -1,17 +1,8 @@
 package net.iwinv.eyers.controller.board;
 
 import lombok.RequiredArgsConstructor;
-import net.iwinv.eyers.config.LoginUser;
-import net.iwinv.eyers.config.dto.SessionUser;
 import net.iwinv.eyers.service.board.BoardService;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-
-import javax.servlet.http.HttpSession;
 
 @RequiredArgsConstructor
 @Controller

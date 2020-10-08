@@ -1,6 +1,7 @@
 package net.iwinv.eyers.config;
 
 import lombok.RequiredArgsConstructor;
+import net.iwinv.eyers.config.annotation.LoginUserArgumentResolver;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.method.support.HandlerMethodArgumentResolver;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;

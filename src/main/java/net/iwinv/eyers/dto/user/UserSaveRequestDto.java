@@ -7,17 +7,27 @@ import net.iwinv.eyers.domain.user.enums.UserStatus;
 
 public class UserSaveRequestDto {
 
-    private String name;
     private String userId;
     private String password;
-    private final Role role = Role.USER;
-    private final UserStatus status = UserStatus.ACTIVE;
+    private String name;
+    private String studentId;
+    private String nickName;
+    private Role role;
+    private UserStatus status;
+
+    public UserSaveRequestDto(String userId, String password, String name, String studentId, String nickName){
+        this(userId, password, name, studentId, nickName, Role.GUEST, UserStatus.ACTIVE);
+    }
 
     @Builder
-    public UserSaveRequestDto(String name, String userId, String password, String email, String picture){
-        this.name = name;
+    public UserSaveRequestDto(String userId, String password, String name, String studentId, String nickName, Role role, UserStatus status){
         this.userId = userId;
         this.password = password;
+        this.name = name;
+        this.studentId = studentId;
+        this.nickName = nickName;
+        this.role = role;
+        this.status = status;
     }
 
     public User toEntity(){
@@ -25,8 +35,19 @@ public class UserSaveRequestDto {
                 .name(name)
                 .userId(userId)
                 .password(password)
+                .studentId(studentId)
+                .nickName(nickName)
                 .role(role)
                 .status(status)
                 .build();
     }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
 }

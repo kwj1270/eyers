@@ -30,8 +30,6 @@ public class Application{
                     .studentId("201512014")
                     .build()
             );
-
-
         };
     }
 }

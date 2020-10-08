@@ -1,4 +1,4 @@
-package net.iwinv.eyers.config;
+package net.iwinv.eyers.config.annotation;
 
 import lombok.RequiredArgsConstructor;
 import net.iwinv.eyers.config.dto.SessionUser;

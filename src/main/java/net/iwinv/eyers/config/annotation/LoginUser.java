@@ -1,4 +1,4 @@
-package net.iwinv.eyers.config;
+package net.iwinv.eyers.config.annotation;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

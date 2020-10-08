@@ -12,6 +12,7 @@ import net.iwinv.eyers.dto.user.UserUpdateRequestDto;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -25,8 +26,13 @@ public class UserService implements UserDetailsService {
     private final UserRepository userRepository;
     private final HttpSession httpSession;
 
+    /*
+     * 암호화 저장
+     */
     @Transactional
     public Long save(UserSaveRequestDto requestDto) {
+        BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
+        requestDto.setPassword(bCryptPasswordEncoder.encode(requestDto .getPassword()));
         return userRepository.save(requestDto.toEntity()).getId();
     }
 
