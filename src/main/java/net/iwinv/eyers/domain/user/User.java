@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import net.iwinv.eyers.domain.BaseTimeEntity;
 import net.iwinv.eyers.domain.user.enums.Role;
 import net.iwinv.eyers.domain.user.enums.UserStatus;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 import javax.persistence.*;
 
@@ -60,8 +61,8 @@ public class User extends BaseTimeEntity { //implements Serializable
         this.nickName = nickName;
     }
 
-    public User encodingPassword(){
-        password = "{noop}"+ password;
+    public User encodingPassword(PasswordEncoder passwordEncoder){
+        password = passwordEncoder.encode(password);
         return this;
     }
 

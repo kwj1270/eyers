@@ -4,6 +4,7 @@ import lombok.Builder;
 import net.iwinv.eyers.domain.user.User;
 import net.iwinv.eyers.domain.user.enums.Role;
 import net.iwinv.eyers.domain.user.enums.UserStatus;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 public class UserSaveRequestDto {
 
@@ -42,12 +43,9 @@ public class UserSaveRequestDto {
                 .build();
     }
 
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
+    public UserSaveRequestDto encodingPassword(PasswordEncoder passwordEncoder){
+        password = passwordEncoder.encode(password);
+        return this;
     }
 
 }

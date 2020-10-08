@@ -19,6 +19,7 @@ public class UserApiController {
     public Long update(@PathVariable Long id, @RequestBody UserUpdateRequestDto requestDto){
         return userService.update(id, requestDto);
     }
+
     @GetMapping("/api/v1/user/{id}")
     public UserResponseDto findById (@PathVariable Long id) {
         return userService.findById(id);

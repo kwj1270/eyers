@@ -8,13 +8,14 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
-import java.time.LocalDateTime;
-import java.util.stream.IntStream;
 
 @SpringBootApplication
 public class Application{
     public static void main(String[] args) { SpringApplication.run(Application.class,args); }
+
+    BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
 
     @Bean
     public CommandLineRunner runner(UserRepository userRepository)
@@ -22,7 +23,7 @@ public class Application{
         return (args) -> {
             User user = userRepository.save(User.builder()
                     .userId("kwj1270")
-                    .password("rladnwo1")
+                    .password(bCryptPasswordEncoder.encode("rladnwo1!"))
                     .name("kimwoojae")
                     .nickName("woo")
                     .role(Role.USER)

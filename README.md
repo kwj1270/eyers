@@ -8,7 +8,7 @@
 <img width="1437" alt="KakaoTalk_20200707_115038267_03" src="https://user-images.githubusercontent.com/50267433/91796128-65f52d80-ec5a-11ea-8eb1-c11cd448ec10.png">
 
 # 리팩토링 회고록   
-2020/10/05 :    
+## 2020/10/05 :    
 * login 기능
     * WebConfig 의 antMatchers()를 하는데 어떻게 ROLE_ 비교하는지 궁금
     * SpringSecurity 에서 따로 User 가지고 사용
@@ -34,5 +34,9 @@
         * 그래서 최대한 값이 안바뀌고 안쓰는게 좋음 즉, 오래 보관하고 중요한 클래스에서는 사용 x  
         * 그런데 User는 중요한데...
     * 해당 문제점 아직 해결하지 못함 
-          
-Convert 성능이슈 https://github.com/spring-projects/spring-boot/issues/14344          
+
+## 2020/10/08 :             
+* 패스워드 암호하 추가             
+* 현재 CustomUserDetails 가 적용되지 않아서 에러가 발생하는 것 같음
+* 이동욱 개발자님이 말하신 하나하나 하고 나중에 리팩토링 해야한다는 말의 의미를 깨달음
+* 우선 User에 UserDetails를 넣어서 해보자   

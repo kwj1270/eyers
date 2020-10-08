@@ -57,7 +57,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .addFilterBefore(filter, CsrfFilter.class).csrf().disable().headers().frameOptions().disable();
 
         http    .authorizeRequests()
-                .antMatchers("/", "/login", "/signup").permitAll()
+                .antMatchers("/", "/login", "/signup/**").permitAll()
                 .antMatchers("/main/**").hasAnyRole(Role.GUEST.name(), Role.USER.name(), Role.ADMIN.name())
                 .antMatchers("/api/v1/**").hasAnyRole(Role.USER.name(), Role.ADMIN.name())
                 .antMatchers("/admin/**").hasRole(Role.ADMIN.name()) // h2-console 바꾸기
@@ -86,7 +86,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     public void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.userDetailsService(userService).passwordEncoder(passwordEncoder());
-        // 해당 서비스(userService)에서는 UserDetailsService를 implements해서 loadUserByUsername() 구현해야함 (서비스 참고)
     }
 
 }

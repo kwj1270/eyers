@@ -5,17 +5,18 @@ import net.iwinv.eyers.domain.user.enums.UserStatus;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
 public class CustomUserDetail implements UserDetails{
-
+    BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
     private final User user;
 
     public CustomUserDetail(User user){
-        this.user = user.encodingPassword();
+        this.user = user.encodingPassword(bCryptPasswordEncoder);
     }
 
     @Override

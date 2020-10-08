@@ -32,8 +32,7 @@ public class UserService implements UserDetailsService {
     @Transactional
     public Long save(UserSaveRequestDto requestDto) {
         BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
-        requestDto.setPassword(bCryptPasswordEncoder.encode(requestDto .getPassword()));
-        return userRepository.save(requestDto.toEntity()).getId();
+        return userRepository.save(requestDto.encodingPassword(bCryptPasswordEncoder).toEntity()).getId();
     }
 
     @Transactional
@@ -92,4 +91,5 @@ public class UserService implements UserDetailsService {
             new UsernameNotFoundException("해당 아이디는 존재하지 않습니다."));
         return new CustomUserDetail(user);
     }
+
 }
