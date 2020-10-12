@@ -1,6 +1,7 @@
 # eyers
 아이어즈 커뮤니티 어플리케이션 개발
-
+## 현재 리펙토링 진행중이여서 실행안됨
+## 이전 작업 결과물 
 <img width="1440" alt="KakaoTalk_20200707_115038267_05" src="https://user-images.githubusercontent.com/50267433/91796039-35ad8f00-ec5a-11ea-8594-19336576ba83.png">  
 <img width="1440" alt="KakaoTalk_20200707_115038267_08" src="https://user-images.githubusercontent.com/50267433/91796066-478f3200-ec5a-11ea-9586-d5981fbcaf7f.png">
 <img width="1440" alt="KakaoTalk_20200627_183740202" src="https://user-images.githubusercontent.com/50267433/91795665-32fe6a00-ec59-11ea-9e3b-ef0d5b02a356.png">   
