@@ -3,12 +3,8 @@ package net.iwinv.eyers.dto.board.comment;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import net.iwinv.eyers.domain.board.Board;
-import net.iwinv.eyers.domain.board.BoardType;
-import net.iwinv.eyers.domain.board.comment.Comment;
-import net.iwinv.eyers.domain.user.User;
-
-import java.time.LocalDateTime;
+import net.iwinv.eyers.domain.user.board.comment.Comment;
+import net.iwinv.eyers.domain.user.user.User;
 
 @Getter
 @NoArgsConstructor

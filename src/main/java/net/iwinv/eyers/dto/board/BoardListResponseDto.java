@@ -1,8 +1,8 @@
 package net.iwinv.eyers.dto.board;
 
 import lombok.Getter;
-import net.iwinv.eyers.domain.board.Board;
-import net.iwinv.eyers.domain.user.User;
+import net.iwinv.eyers.domain.user.board.Board;
+import net.iwinv.eyers.domain.user.user.User;
 
 import java.time.LocalDateTime;
 

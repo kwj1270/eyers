@@ -1,8 +1,8 @@
 package net.iwinv.eyers.service.board.comment;
 
 import lombok.RequiredArgsConstructor;
-import net.iwinv.eyers.domain.board.comment.Comment;
-import net.iwinv.eyers.domain.board.comment.CommentRepository;
+import net.iwinv.eyers.domain.user.board.comment.Comment;
+import net.iwinv.eyers.domain.user.board.comment.CommentRepository;
 import net.iwinv.eyers.dto.board.comment.CommentResponseDto;
 import net.iwinv.eyers.dto.board.comment.CommentSaveRequestDto;
 import net.iwinv.eyers.dto.board.comment.CommentUpdateRequestDto;

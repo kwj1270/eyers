@@ -2,9 +2,8 @@ package net.iwinv.eyers.service.user;
 
 import lombok.RequiredArgsConstructor;
 import net.iwinv.eyers.config.dto.SessionUser;
-import net.iwinv.eyers.domain.user.security.CustomUserDetail;
-import net.iwinv.eyers.domain.user.User;
-import net.iwinv.eyers.domain.user.UserRepository;
+import net.iwinv.eyers.domain.user.user.User;
+import net.iwinv.eyers.domain.user.user.UserRepository;
 import net.iwinv.eyers.dto.user.UserListResponseDto;
 import net.iwinv.eyers.dto.user.UserResponseDto;
 import net.iwinv.eyers.dto.user.UserSaveRequestDto;
@@ -89,7 +88,7 @@ public class UserService implements UserDetailsService {
     public UserDetails loadUserByUsername(String userId) throws UsernameNotFoundException {
         User user = userRepository.findByUserId(userId).orElseThrow(() ->
             new UsernameNotFoundException("해당 아이디는 존재하지 않습니다."));
-        return new CustomUserDetail(user);
+        return user;
     }
 
 }

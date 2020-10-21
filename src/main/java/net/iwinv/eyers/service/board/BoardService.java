@@ -1,8 +1,8 @@
 package net.iwinv.eyers.service.board;
 
 import lombok.RequiredArgsConstructor;
-import net.iwinv.eyers.domain.board.Board;
-import net.iwinv.eyers.domain.board.BoardRepository;
+import net.iwinv.eyers.domain.user.board.Board;
+import net.iwinv.eyers.domain.user.board.BoardRepository;
 import net.iwinv.eyers.dto.board.BoardListResponseDto;
 import net.iwinv.eyers.dto.board.BoardResponseDto;
 import net.iwinv.eyers.dto.board.BoardSaveRequestDto;

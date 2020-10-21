@@ -16,7 +16,7 @@ apply plugin: 'eclipse'
 apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
 
-group 'net.iwinv.eyers1'
+group 'net.iwinv.eyers'
 version '1.0-SNAPSHOT'
 sourceCompatibility = 1.8
 

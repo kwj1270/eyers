@@ -1,7 +1,7 @@
 package net.iwinv.eyers.config;
 
 import lombok.RequiredArgsConstructor;
-import net.iwinv.eyers.domain.user.enums.Role;
+import net.iwinv.eyers.domain.user.user.enums.Role;
 import net.iwinv.eyers.service.user.UserService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -42,7 +42,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/favicon*/**")
                 .antMatchers("/h2-console/**")
                 .antMatchers("/images/**");
-
     }
 
     /*
@@ -57,7 +56,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .addFilterBefore(filter, CsrfFilter.class).csrf().disable().headers().frameOptions().disable();
 
         http    .authorizeRequests()
-                .antMatchers("/", "/login", "/signup/**").permitAll()
+                .antMatchers("/", "/login/**", "/loginProcess", "/signup/**").permitAll()
                 .antMatchers("/main/**").hasAnyRole(Role.GUEST.name(), Role.USER.name(), Role.ADMIN.name())
                 .antMatchers("/api/v1/**").hasAnyRole(Role.USER.name(), Role.ADMIN.name())
                 .antMatchers("/admin/**").hasRole(Role.ADMIN.name()) // h2-console 바꾸기

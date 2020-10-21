@@ -1,9 +1,9 @@
 package net.iwinv.eyers.dto.user;
 
 import lombok.Builder;
-import net.iwinv.eyers.domain.user.User;
-import net.iwinv.eyers.domain.user.enums.Role;
-import net.iwinv.eyers.domain.user.enums.UserStatus;
+import net.iwinv.eyers.domain.user.user.User;
+import net.iwinv.eyers.domain.user.user.enums.Role;
+import net.iwinv.eyers.domain.user.user.enums.UserStatus;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 public class UserSaveRequestDto {

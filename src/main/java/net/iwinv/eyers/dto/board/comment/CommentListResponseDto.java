@@ -1,8 +1,8 @@
 package net.iwinv.eyers.dto.board.comment;
 
 import lombok.Getter;
-import net.iwinv.eyers.domain.board.comment.Comment;
-import net.iwinv.eyers.domain.user.User;
+import net.iwinv.eyers.domain.user.board.comment.Comment;
+import net.iwinv.eyers.domain.user.user.User;
 
 @Getter
 public class CommentListResponseDto {

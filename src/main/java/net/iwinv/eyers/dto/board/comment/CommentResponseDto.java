@@ -1,13 +1,10 @@
 package net.iwinv.eyers.dto.board.comment;
 
 import lombok.Getter;
-import net.iwinv.eyers.domain.board.Board;
-import net.iwinv.eyers.domain.board.BoardType;
-import net.iwinv.eyers.domain.board.comment.Comment;
-import net.iwinv.eyers.domain.user.User;
+import net.iwinv.eyers.domain.user.board.comment.Comment;
+import net.iwinv.eyers.domain.user.user.User;
 
 import java.time.LocalDateTime;
-import java.util.List;
 
 @Getter
 public class CommentResponseDto {

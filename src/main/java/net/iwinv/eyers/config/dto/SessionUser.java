@@ -1,8 +1,8 @@
 package net.iwinv.eyers.config.dto;
 
 import lombok.Getter;
-import net.iwinv.eyers.domain.user.User;
-import net.iwinv.eyers.domain.user.enums.Role;
+import net.iwinv.eyers.domain.user.user.User;
+import net.iwinv.eyers.domain.user.user.enums.Role;
 
 import java.io.Serializable;
 

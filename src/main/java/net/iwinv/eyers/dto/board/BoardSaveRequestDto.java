@@ -3,9 +3,9 @@ package net.iwinv.eyers.dto.board;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import net.iwinv.eyers.domain.board.Board;
-import net.iwinv.eyers.domain.board.BoardType;
-import net.iwinv.eyers.domain.user.User;
+import net.iwinv.eyers.domain.user.board.Board;
+import net.iwinv.eyers.domain.user.board.BoardType;
+import net.iwinv.eyers.domain.user.user.User;
 
 @Getter
 @NoArgsConstructor
