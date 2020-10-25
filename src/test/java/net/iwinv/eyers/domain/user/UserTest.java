@@ -5,7 +5,9 @@ import net.iwinv.eyers.domain.user.user.UserRepository;
 import net.iwinv.eyers.domain.user.user.enums.Role;
 import net.iwinv.eyers.domain.user.user.enums.UserStatus;
 import org.junit.After;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
@@ -16,6 +18,11 @@ import static org.assertj.core.api.Assertions.assertThat;
 @RunWith(SpringRunner.class)
 @DataJpaTest
 public class UserTest {
+
+    @Rule
+    public ExpectedException thrown = ExpectedException.none();
+
+
 
     @Autowired
     private UserRepository userRepository;
