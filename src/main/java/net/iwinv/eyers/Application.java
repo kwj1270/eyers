@@ -16,7 +16,7 @@ public class Application{
     public static void main(String[] args) { SpringApplication.run(Application.class,args); }
 
     BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
-/*
+
     @Bean
     public CommandLineRunner runner(UserRepository userRepository)
             throws Exception{
@@ -33,6 +33,6 @@ public class Application{
             );
         };
     }
- */
+
 }
 

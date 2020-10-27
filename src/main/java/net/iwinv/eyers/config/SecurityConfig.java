@@ -37,11 +37,14 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         web.ignoring()
                 .antMatchers("/resources/**")
                 .antMatchers("/css/**")
-                .antMatchers("/vendor/**")
+                .antMatchers("/fonts/**")
+                .antMatchers("/images/**")
                 .antMatchers("/js/**")
+                .antMatchers("/scss/**")
+                .antMatchers("/vendor/**")
                 .antMatchers("/favicon*/**")
-                .antMatchers("/h2-console/**")
-                .antMatchers("/images/**");
+                .antMatchers("/h2-console/**");
+
     }
 
     /*
@@ -54,6 +57,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
         http
                 .addFilterBefore(filter, CsrfFilter.class).csrf().disable().headers().frameOptions().disable();
+
 
         http    .authorizeRequests()
                 .antMatchers("/", "/login/**", "/loginProcess", "/signup/**").permitAll()

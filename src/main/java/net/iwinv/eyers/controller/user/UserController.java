@@ -12,11 +12,18 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 @RequiredArgsConstructor
 @Controller
 public class UserController {
     private final UserService userService;
+
+    @RequestMapping("/login")
+    public String signup(@LoginUser SessionUser user){
+        if(user != null) return "redirect:main";
+        return "login";
+    }
 
     @PostMapping("/signup/user")
     public String signup(UserSaveRequestDto requestDto){
@@ -35,6 +42,5 @@ public class UserController {
         model.addAttribute("board",userService.findByUserId(userId));
         return "user-update";
     }
-
 
 }

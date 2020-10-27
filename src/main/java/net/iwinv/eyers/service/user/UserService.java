@@ -88,6 +88,7 @@ public class UserService implements UserDetailsService {
     public UserDetails loadUserByUsername(String userId) throws UsernameNotFoundException {
         User user = userRepository.findByUserId(userId).orElseThrow(() ->
             new UsernameNotFoundException("해당 아이디는 존재하지 않습니다."));
+        httpSession.setAttribute("user", new SessionUser(user));
         return user;
     }
 

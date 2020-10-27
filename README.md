@@ -42,3 +42,10 @@
 * 이동욱 개발자님이 말하신 하나하나 하고 나중에 리팩토링 해야한다는 말의 의미를 깨달음
 * 우선 User에 UserDetails를 넣어서 해보자   
 * 현재 Controller 개발 및 UI 작성해야함  
+
+## 2020/10/27 :             
+* 로그인 기능 구현 완료              
+    * SpringSecurity 로그인은 일반적으로 Session 을 지원하지는 않는다.
+    * 그러므로 UserService 의 loadUser() 에서 httpSession 을 통해 넣어주어야한다.   
+* login 후 뒤로가기를 막기 위해 login 을 위한 Controller 메서드를 만들었습니다.
+ 

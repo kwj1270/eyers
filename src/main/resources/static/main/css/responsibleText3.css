@@ -1,0 +1,64 @@
+
+
+.show-slowly-text {
+    list-style: none;
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    transform: translateX(-50%) translateY(-50%);
+}
+.show-slowly-text li {
+    display: inline-block;
+    margin-right: 20px;
+    font-family: Open Sans, Arial;
+    font-weight: 300;
+    font-size: 1.75em;
+    color: #fff;
+    opacity: 1;
+    transition: all 1.5s ease-in-out;
+}
+.show-slowly-text li:last-child {
+    margin-right: 0;
+}
+.show-slowly-text.hidden li {
+    opacity: 0;
+}
+.fly-in-text.hidden li:nth-child(1) { transform: translateX(0px) translateY(0px); }
+.fly-in-text.hidden li:nth-child(2) { transform: translateX(0px) translateY(0px); }
+.fly-in-text.hidden li:nth-child(3) { transform: translateX(0px) translateY(0px); }
+.fly-in-text.hidden li:nth-child(4) { transform: translateX(0px) translateY(0px); }
+.fly-in-text.hidden li:nth-child(5) { transform: translateX(0px) translateY(0px); }
+.fly-in-text.hidden li:nth-child(6) { transform: translateX(0px) translateY(0px); }
+
+/* End sidenav Styles */
+
+.fly-in-text {
+    list-style: none;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+.fly-in-text li {
+    display: inline-block;
+    margin-right: 30px;
+    font-family: Open Sans, Arial;
+    font-weight: 300;
+    font-size: 2.75em;
+    color: #fff;
+    opacity: 1;
+    transition: all 1.5s ease-in-out;
+}
+.fly-in-text li:last-child {
+    margin-right: 0;
+}
+.fly-in-text.hidden li{
+    opacity: 0;
+}
+ .fly-in-text.hidden li:nth-child(1) { transform: translateX(-200px) translateY(-200px); }
+ .fly-in-text.hidden li:nth-child(2) { transform: translateX(20px) translateY(100px); }
+ .fly-in-text.hidden li:nth-child(3) { transform: translateX(-150px) translateY(-80px); }
+ .fly-in-text.hidden li:nth-child(4) { transform: translateX(10px) translateY(-200px); }
+ .fly-in-text.hidden li:nth-child(5) { transform: translateX(-300px) translateY(200px); }
+ .fly-in-text.hidden li:nth-child(6) { transform: translateX(20px) translateY(-20px); }
+ /* End sidenav Styles */
